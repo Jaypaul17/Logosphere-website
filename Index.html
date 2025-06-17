@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Logosphere</title>
+
+  <!-- Google Fonts - Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons CDN -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
+
+<style>
+    /* Prevent horizontal scrollbar on body/html */
+    html, body {
+      overflow-x: hidden;
+      font-family: 'Inter', sans-serif; /* Ensuring Inter font is applied */
+    }
+
+    /* Hero Section */
+#hero {
+  background: url('../img/landing-bg.jpg') center center no-repeat;
+  background-size: cover;
+  height: 100vh;
+  color: #fff;
+  position: relative;
+}
+
+#hero::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+#hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Float Effect on Hover */
+.btn-float {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-float:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.icon-box {
+  width: 50px;
+  height: 50px;
+  background: #f0f6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.reading {
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+img:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+/* Custom style for the scroll fade overlay to precisely match parent padding */
+.scroll-fade-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 1.5rem; /* Matches Bootstrap's p-4 (default padding) */
+    right: 1.5rem; /* Matches Bootstrap's p-4 (default padding) */
+    height: 60px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), white);
+    pointer-events: none;
+    z-index: 2; /* Ensure it's above content */
+}
+
+/* Adjust for medium screens and up to match p-md-5 */
+@media (min-width: 768px) { /* md breakpoint */
+    .scroll-fade-overlay {
+        left: 3rem; /* Matches Bootstrap's p-md-5 */
+        right: 3rem; /* Matches Bootstrap's p-md-5 */
+    }
+}
+    
+</style>
+  
+</head>
+<body>
+
+<!-- HERO SECTION -->
+<section class="py-5" style="background: #f8faff;">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Left Content -->
+      <!-- Added responsive text alignment to the column containing hero text -->
+      <div class="col-md-6 mb-4 mb-md-0 text-center text-md-start" data-aos="fade-right">
+        <span class="badge rounded-pill bg-primary animate__animated animate__pulse animate__infinite">
+          <!-- Changed width attribute to max-width style for better responsiveness -->
+          <img style="max-width: 50px;" class="img-fluid" src="Img/Logosphere logo.png" alt="">
+        </span>
+        <h1 class="display-5 fw-bold animate__animated animate__fadeInUp">Logosphere</h1>
+        <p class="lead text-muted">My notes to humanity for a new paradigm</p>
+        <p class="fw-semibold mt-3 mb-1">By <strong>Michael Uzoma Okoro</strong></p>
+        <p>
+          From climate change to war... <br>
+          This book presents the Logos as the key to redeeming our world.
+        </p>
+        <div class="d-flex gap-3 mt-4 justify-content-center justify-content-md-start">
+          <a href="https://www.amazon.com/LOGOSPHERE-notes-humanity-new-paradigm-ebook/dp/B0CLL1SLJP" class="btn btn-primary text-white px-4 py-2 fw-semibold animate__animated animate__fadeInLeft btn-float">Get Your Copy</a>
+          <a href="#read-excerpt" class="btn btn-outline-primary px-4 py-2 fw-semibold animate__animated animate__fadeInRight btn-float">Read Preview</a>
+        </div>
+      </div>
+
+      <!-- Right Book Cover -->
+      <div class="col-md-6 text-center" data-aos="zoom-in">
+        <img src="Img/book-image.webp" alt="Book Cover" class="img-fluid" style="max-height: 450px; transform: rotate(-2deg);">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="py-5" style="background-color: #f0f6ff;">
+  <div class="container">
+    <div class="row align-items-start gap-5">
+      <!-- LEFT -->
+      <div class="col-md-5 mb-4 mb-md-0 text-center" data-aos="fade-up_delay-2s">
+        <img src="Img/Book cover 2.jpg" alt="Book Cover" class="img-fluid shadow mb-4 reading">
+        <div class="bg-white rounded-4 shadow-sm p-3 d-flex flex-wrap justify-content-around gap-3">
+          <div class="text-center">
+            <!-- Changed width attribute to max-width style for better responsiveness -->
+            <img src="Img/Pages.png" alt="Pages Icon" style="max-width: 30px;">
+            <p class="mb-0 fw-semibold">Pages</p>
+            <p>326</p>
+          </div>
+          <div class="text-center">
+            <!-- Changed width attribute to max-width style for better responsiveness -->
+            <img src="Img/Language.png" alt="Language Icon" style="max-width: 30px;">
+            <p class="mb-0 fw-semibold">Language</p>
+            <p>English</p>
+          </div>
+          <div class="text-center">
+            <!-- Changed width attribute to max-width style for better responsiveness -->
+            <img src="Img/Calendar.png" alt="Published Icon" style="max-width: 30px;">
+            <p class="mb-0 fw-semibold">Published</p>
+            <p>07/11/2023</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT TEXT -->
+      <!-- Added responsive text alignment to the column containing about text -->
+      <div class="col-md-6 text-center text-md-start" data-aos="fade-left">
+        <h1 class="text-secondary mb-3">About the Book</h1>
+        <div class="d-inline-flex align-items-center gap-2 mb-2"> <!-- Wrapped "Young People" icon and text for better centering -->
+            <img src="Img/Young.png" alt="Young People" style="max-width: 30px;">
+            <p class="mb-0 fw-semibold ">Young People</p>
+        </div>
+        <p class="text-dark">
+          Look around the world objectively; look. Whether you live in affluence or squalor, look. Whoever you are, or whatever position you find yourself in, just look. As you will see, the wind of change is blowing and it is touching everyone. Humanity suffers a great decline, from climate change to climate change to political instability, and war and conflict between nations. A great number of people are confused, worried, and in despair. Many of our leaders and experts are not left out in the great confusion. There has hardly been a time in humanity's history when the future of humanity holds great concern such as it holds now. Indeed a greater wisdom and intelligence must now be brought to bear in moving towards the future. Not a wisdom or intelligence that is born of the intellect or of our rational mind, but rather a higher wisdom and intelligence that is born out of or is rather the very source of our existence. This higher wisdom and intelligence in this book is called the Logos. It is this intelligence called the Logos that this book seeks to introduce to its reader and heralds this intelligence to be the redemption to a declining world.
+        </p>
+        <h3 class="fw-bold mt-4 mb-3">What You'll Discover:</h3>
+        <ul class="list-unstyled text-dark">
+          <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Purpose</li>
+          <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Meaning</li>
+          <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>A New Awarness</li>
+          <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>An urge to Serve and Contribute something to the world</li>
+        </ul>
+        <a href="https://www.amazon.com/LOGOSPHERE-notes-humanity-new-paradigm-ebook/dp/B0CLL1SLJP" class="btn btn-primary mt-3 px-4 py-2 rounded-pill animate__animated animate__fadeInUp btn-float">
+          Get the Book <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY SPECIAL SECTION (REIMAGINED) -->
+<section class="py-5" style="background-color: #f8faff;">
+  <div class="container" data-aos="fade-up">
+    <div class="row align-items-center">
+      
+      <!-- LEFT SIDE: TEXT FEATURES -->
+      <div class="col-md-6">
+        <div class="mb-4 text-center text-md-start"> <!-- Added responsive text alignment -->
+          <h2 class="fw-bold">Why This Book Stands Out</h2>
+          <p class="text-muted">A journey into truth, logic, and a better future for humanity</p>
+        </div>
+
+        <!-- Item 1 -->
+        <!-- Adjusted flex classes for mobile stacking and centering -->
+        <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start mb-4" data-aos="fade-up">
+          <div class="icon-box me-md-3 mb-2 mb-md-0"> <!-- Added mb-2 for vertical spacing on mobile -->
+            <i class="bi bi-lightbulb-fill text-primary fs-3"></i>
+          </div>
+          <div class="text-center text-md-start"> <!-- Added responsive text alignment -->
+            <h5 class="fw-bold mb-1">Revolutionary Ideas</h5>
+            <p class="text-muted mb-0">
+              This book doesn't recycle trends — it proposes bold, paradigm-shifting concepts you won’t find anywhere else.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start mb-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="icon-box me-md-3 mb-2 mb-md-0">
+            <i class="bi bi-chat-left-text-fill text-success fs-3"></i>
+          </div>
+          <div class="text-center text-md-start">
+            <h5 class="fw-bold mb-1">Meaningful Conversations</h5>
+            <p class="text-muted mb-0">
+              Written in a compelling voice that feels like a real dialogue between the author and your inner thinker.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start mb-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="icon-box me-md-3 mb-2 mb-md-0">
+            <i class="bi bi-globe-americas text-warning fs-3"></i>
+          </div>
+          <div class="text-center text-md-start">
+            <h5 class="fw-bold mb-1">Global Relevance</h5>
+            <p class="text-muted mb-0">
+              Addresses pressing global issues like climate change, war, and society with depth and clarity.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start mb-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="icon-box me-md-3 mb-2 mb-md-0">
+            <i class="bi bi-star-fill text-danger fs-3"></i>
+          </div>
+          <div class="text-center text-md-start">
+            <h5 class="fw-bold mb-1">Spiritual Depth</h5>
+            <p class="text-muted mb-0">
+              Goes beyond the surface to explore the <em>Logos</em> — a timeless concept of divine wisdom and truth.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE: IMAGE -->
+      <div class="col-md-6 text-center" data-aos="fade-left" data-aos-delay="400">
+        <img src="Img/Reading.png" alt="Reading Illustration" class="img-fluid reading" style="max-height: 420px;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5" style="background-color: #f0f6ff;">
+  <div class="container d-flex flex-column flex-lg-row align-items-start gap-5 ">
+    
+    <!-- Author Image -->
+    <div class="flex-shrink-0 text-center" data-aos="fade-right" data-aos-duration="1000">
+      <img src="Img/Author.jpg" alt="Author photo" class="img-fluid rounded-4 shadow" style="max-width: 300px;">
+      <div class="mt-3">
+        <img src="Img/Signature.png" alt="Signature" style="max-width: 150px;">
+      </div>
+    </div>
+
+    <!-- Author Info -->
+    <!-- Added responsive text alignment to the author info div -->
+   <div class="text-center text-lg-start" data-aos="fade-left" data-aos-duration="1000">
+      <h6 class="text-uppercase text-muted fw-bold mb-2 ">About the Author</h6>
+      <h2 class="fw-bold mb-2">Michael Uzoma Okoro</h2>
+      <p class="fst-italic text-secondary mb-4">Bestselling Author of Science Fiction &amp; Fantasy</p>
+
+      <p>I’m a humanitarian, photographer, writer, entrepreneur, and most of all, a lover of humanity. I am the founder and president of the Logosphere Institute. The Logosphere Institute is geared towards supporting humanity’s evolution and transition into a new paradigm.</p>
+      <p>The Logosphere Institute was seeded in my heart and mind around August 2021 as I wrote the sub-note of Note XIV, Vanguards of a New World in my debut book, Logosphere. It is a testament to that particular Note which encourages the individual to become or create a vehicle of change in the world.</p>
+      <p class="mb-4">As I look into the world everyday, it elates and inspires me to see an armada of people and organizations in different endeavours rising up and taking on creative and inspiring initiatives to sustain humanity and to successfully steer humanity into a new paradigm. The Logosphere Institute wishes to be a part of this force. I too wish to be a part of this force. What about you?</p>
+      <!-- Socials -->
+      <h6 class="fw-bold mt-4">Connect with the Author</h6>
+      <!-- Added responsive justify-content for social icons -->
+      <div class="d-flex gap-3 mt-2 justify-content-center justify-content-lg-start">
+        <a href="https://x.com/MerchandizeMike" class="text-primary fs-5"><i class="bi bi-twitter"></i></a>
+        <a href="https://web.facebook.com/michael.okoro.12327/about" class="text-primary fs-5"><i class="bi bi-facebook"></i></a>
+        <a href="https://t.co/hTkzjxC7Qv" class="text-primary fs-5"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="text-primary fs-5"><i class="bi bi-envelope"></i></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="py-5 bg-light" id="read-excerpt">
+  <div class="container">
+    <div class="text-center mb-4" data-aos="fade-up">
+      <h4 class="fw-bold text-uppercase text-primary">Step Into the Logosphere</h4>
+      <p class="text-muted">An unseen realm where words become worlds, and thoughts find form.</p>
+    </div>
+
+    <div class="bg-white p-4 p-md-5 rounded shadow-sm border-top border-3 border-primary position-relative" data-aos="zoom-in" data-aos-delay="100">
+
+      <div class="scroll-excerpt pe-3" style="max-height: 500px; overflow-y: auto;">
+        <div class="text-end text-muted fw-semibold mb-2" style="font-size: 0.8rem;">XX</div>
+        <h5 class="text-center fw-bold mb-4 text-dark">Notes XX: HOMO DEUS</h5>
+
+        <blockquote class="blockquote fst-italic text-center my-4 text-secondary">
+          <p>“...You charge us with your safekeeping yet despite our best efforts, your countries wage wars, you toxify your earth and pursue ever more destructive means of self-destruction. You cannot be trusted with your own survival”.</p>
+          <footer class="blockquote-footer text-center">Viki, the AI in the movie, irobot.</footer>
+        </blockquote>
+
+        <p>Since time immemorial, mankind has always craved power and would consistently go in pursuit of those things that symbolizes power or grants a measure of power—Gold, territory, money, a physical or mental attribute, a lucrative career, fame, political position, military force, mysticism, or as we see in the world today; technology. Power is no doubt essential. It is a survival mechanism that is required in facing the consequence of living in this reality, and the consequence of living in this reality is the challenge of fulfilling the needs of this reality, which includes the need for food, shelter, security, social acceptance/relevance /recognition, and so many other endless human needs which are fundamentally physiological and psychological. Varying degrees of power are required to attain even the most basic of human needs, and the more power one has, the more needs in life one can attain or accomplish. In essence, power is required to carry out our will or agenda—whatever they may be, or to have things go our way or done in a way that we believe will make us happy, fulfilled, or secure. Mostly, if anyone possesses any measure of power, the primary thing that comes to mind is how to enrich one's self or put one's self in a more comfortable or secure position, to influence or gain control over others, or protect oneself against others who may try to undermine, devalue, or destroy one. Without power or any measure of power, we consider ourselves vulnerable, which is a position we most likely do not want to be in. As much as we use power to get our will done, we must not fail to see that a great percentage of the time, our will is nothing short of the result of the fears and desires that lurks within us; the desire to have all our physiological and psychological needs met, and the fear of losing or not having them met. We struggle to fulfill our physiological and psychological needs that we do not recognize a deeper need within ourselves; the need of the soul which at its core is contribution and service to the world, not the contribution and service that we conceive of with our mind and that we hope to get a sense of relevance from, but the contribution and service that is born of a greater will within us, and whose motivation is greater than our personal motivation. This greater will is the will of God steering us from the inside out. Power, —whatever symbol of power that we possess—as much as it is used or can be used to serve our personal will, must first and foremost serve the will of God. This is the true and primary essence of the power that we seek or possess in the world. But sadly, in the world today, many people are obsessed with their physical or psychological identity and its needs. They are yet to come to terms with the reality that they carry a greater will and existence within themselves which represents their true need and identity. As long as people do not realize this or consider this, their idea of power would be skewed, and they would live by bread alone.</p>
+
+        <p>In the prologue of this book, I shared some thoughts about the movie, “Bruce Almighty”; a movie about a certain talented man named Bruce Nolan who is a journalist and anchorman for a local news station. Bruce had a girlfriend named Grace. Grace loved Bruce and was contented with the life they both had and shared. But Bruce wanted more from life. More especially, he was desperate for a better position at his place of work and became disappointed and furious when he discovered that the position which he eyed had been given to another of his colleague who Bruce had always seen as a rival. Bruce was on live TV at the time of this discovery and could not contain his disappointment and rage. He went crazy on live TV and threw tantrums which resulted in him losing his job and being thrown out of the work’s premises. Subsequently, more misfortune followed Bruce, and for every misfortune that Bruce encountered, Bruce blamed it on God. He felt completely ignored by God and complained bitterly to God. In one of his complaints, he yelled out that God wasn’t doing a good job of being God. God being 'weary’ of Bruce’s complaints summons Bruce and addresses his complaints by endowing Bruce with all His powers so that Bruce can get a chance of doing a better job at being God since he was convinced that God Almighty wasn’t doing a good job. So, Bruce Nolan, being endowed with God’s power, became Bruce Almighty. All power now belonged to him except the power to mess with people’s free will. Now that Bruce had the power of God, he sought to make his life easier and better, improve his career and his romantic relationship, and get back at everyone who made his life miserable when he was only 'human’. Bruce was selfish, indolent, vengeful, and foolish. He only thought about himself and couldn’t see the far-off consequences of his selfish actions—imagine having all that power but no foresight or wisdom. A little more than a week after Bruce has been selfishly exercising his God-bestowed power, he was asked by God how many people he has helped since the time he gained such power. Bruce stuttered and could not clearly answer the question. And he afterward thought the way to easily help people and make them happy was to say "yes” to all their prayer requests. Sure, that turned out to be a foolish decision that came with immense consequences. Things had become clearly catastrophic and it also took Bruce to lose the one that he loves—his girlfriend, Grace—before he realized the error of his ways. He became overwhelmed and frustrated. And even while still possessing the power of God, he brokenly cried out to God, saying,</p>
+
+        <blockquote class="blockquote fst-italic text-center my-4 text-secondary">
+          <p>“…I don’t wanna do this anymore. I don’t wanna be God. I want you to decide what’s right for me. I surrender to your will”</p>
+        </blockquote>
+
+        <p>—a confession that redeemed Bruce and earned Bruce a greater wisdom and a life replenished with gratitude as he realized the things that truly mattered in life—selflessness, forgiveness, love, contentment, service, and all other attributes that are truly godlike. This story or film has a significant lesson that humanity can draw from at this time; a humanity that is greatly seeking power but not a commensurate wisdom.</p>
+
+        <p>In the world today, people still struggle every day to attain power in order to fulfill their needs; even their most basic needs. But so far, humanity as a whole has evolved and has achieved so many needs through various degrees of power. The more achievements humanity attains, the more achievements humanity desires. And the more achievements humanity desires, the more power humanity seeks because power is needed to achieve those desires. Humanity wants to be in control of her own destiny and evolution. She wants the power to carry out her dreams and fantasies. She wants the power to do and undo, to create and to demolish, and to take over the universe in a so-called golden era of space exploration. But alas, humanity is not united and nations are still wary of one another. They all want power but can’t seem to trust it in each other’s hands. Hence, they try to pull each other down like crabs in a bucket in order to stop each other from reaching a certain height of power. Instead of racing together hand-in-hand to the fruit basket and sharing the fruits, one nation or group wants to get there first and have the whole fruit basket to themselves. There is no Ubuntu. There is no trust. There is only a stark quest for power—the power to influence and gain control of others or the power to be god over others. It is interesting how we associate power with godlikeness, that the more powerful we consider ourselves to be, the more godlike we think of ourselves. And one way we use to measure our godlike status nowadays is to evaluate how technological we have become. Technology has become the new power. We assume that technology grants us godlike abilities that equals tremendous possibilities for humanity both now and in the future—especially in the future. The more technological we are or become, the more godlike we think of ourselves. Technology is the tool of power that humanity would use in attaining more power, in determining her destiny and evolution, and in taking over the universe. In the world today, big nations are in competition and vying for power using the tool of technology, and the nation with the most powerful technology is expected to become the most powerful nation and the supreme god over other nations. This has quickened the pace at which technology is advancing—particularly in the area of nuclear arms—because every nation wants to outdo the other in terms of technology and power or technological power per se. They want to be the supreme god and dominate other nations, or to be a 'god’ that cannot be intimidated by other 'gods’. They want to secure themselves from other nations, gain the respect of other nations, or have total independence from other nations. And provided this assurance of power and security that technology promises these nations, these nations have grabbed technology tightly by its horns and pressed the throttle on it. And the result is a humanity that is racing so fast on the path of technology that we are said to be witnessing the fastest technological evolution ever recorded. Humanity has evolved more technologically than in any other area of human engagement. What so far has greatly accelerated and still greatly accelerates our technological progress, even in the area of nuclear arms, is Artificial Intelligence (AI). AI is a very powerful technology, like a genie, that humanity has created. It is like the apex of human invention that has the potential to determine humanity’s destiny and direction of evolution. It is as though humanity has successfully created an extended brain or mind that seems more cognitive and smarter than the average human brain or mind. And this extended brain or mind, like a personal assistant, has long become very instrumental in humanity’s technological progress and everyday life and stands to remain very instrumental to humanity’s further scientific innovation, exploration, and everyday life.</p>
+
+        <p>Artificial intelligence enhances humanity's productivity in all fields of endeavour that it is applied to. Right now, it has permeated so deep into the fabric of our civilization that we cannot now imagine life without it. Its benefits to the human society are immense. But then, so are its threats. Artificial intelligence, though said to still be at its early stage, is extremely smart and is already challenging human intelligence in several domains or even superseding human intelligence to a far degree in those domains. It is also disrupting several jobs and industries because of its ability to carry out certain tasks far more efficiently and accurately than humans. Artificial intelligence keeps getting smarter every day, very exponentially. Its accumulated data surpasses by far what an average human can gather within a lifetime and its analytical and computational power cannot be contended by any human being alive. It yet remains a servant, but a servant whose loyalty humanity fears might not last. Humanity fears that artificial intelligence may in no distant time reach a state called singularity or Artificial General Intelligence (AGI) where it attains awareness, then reaches or supersedes human-level intelligence and for whatever reason go against the human race, enslave us, or wipe us out. This is an exaggerated fear as said by some optimistic artificial intelligence scientists and experts who think that humans getting wiped away by artificial intelligence is fictional and very unlikely, and artificial intelligence attaining human-level intelligence, which is more likely, is still far off. And even before or by the time it attains such human-level intelligence, they would have been able to devise ways to contain it, control it, or make it harmless. They propose no guarantee here except for sheer human optimism and faith.</p>
+
+        <blockquote class="blockquote fst-italic text-center my-4 text-secondary">
+          <p>It is like jumping off a plane without a parachute with the hope or intention of building a parachute in midair.</p>
+        </blockquote>
+
+        <p>And in addition, the prognosis of singularity or AGI cannot be clearly discussed until we come to a consensus on what intelligence is and what the attributes are that an artificial general intelligence would have or display that would make us consider it equally intelligent or more intelligent than humans. If we allow our definition of intelligence to not be limited, we would see that intelligence is broad and multi-dimensional, and the origin and most comprehensive view of intelligence is Life itself. Every mental, physical, metaphysical, or emotional concept in the fabric of life that we can think of, is intelligence; not intelligent, but intelligence. In a more narrow sense, every living organism can be regarded as not only intelligent but as Intelligence in the comprehensive sense of the word. This means that they not only display intelligence, but they are also an embodiment of Intelligence. Every living organism is capable of learning and evolving, and have taken millions and billions of years to diligently learn and evolve to the point that they currently are on the scale of the evolution of life. That is Intelligence at work. 'Intelligent’ is what the organism does. 'Intelligence’ is what governs the organism to do what it does. Intelligence is indeed a vast word. And since we are trying to create an artificial kind of intelligence that mimics not a chimpanzee, dog, or chicken intelligence, but a human intelligence, then we must see that deep down humans have a nature that of course like every organism transcends physicality, and also algorithm, statistics, logic, or rationality which is an AI’s forte. This nature that humans have is a spiritual nature and intelligence that is rooted in the 'I’ or the Logos that science or artificial intelligence scientists do not understand and therefore cannot program into a machine or AI. This is to point to the improbability of AGI. And in this, I do not disregard the brilliance of science or what science can achieve if it puts its mind to it, but to point to the mystery and intricacy of our own design and true nature; that we are beyond the mind. At best, I presume that science would make breakthroughs in understanding the human brain and mind because these are the areas that AI scientists try to understand in order to make better AI or AIs that are more human-like. But the intelligences such as love, faith, compassion, intuition, conviction, inspiration, creativity, talent, and most especially our deep spiritual nature, would mostly elude the grasp of science. Hence, we cannot envision an AI being more intelligent than a human being. More Intellectual, yes. But more intelligent? That is highly debatable, and at the end of the day, not a probable reality considering a comprehensive perspective of what intelligence is and the vast array of intelligences that a human being embodies. And alas! What may mark the overthrow of the human intellect may mark the rise and discovery of a greater intelligence that has been waiting for so long to be discovered—the Logos. Perhaps, this is a good time for humanity to look beyond the intellect as a measure of intelligence, because in terms of intellect, an AI could make a damn fool out of even the most brilliant or intellectual person. Nevertheless, there are lots of other fears, concerns, and debates regarding AI and they mostly revolve around the question of humanity’s competence in handling a super-intelligent entity, the disturbance to civilization resulting from the high rate of unemployment artificial intelligence would bring about as it advances so quickly, the tendency of the artificial intelligence to do something which we have commanded it to do, but doing it in a way which we do not want it to do it, which is a rogue act that makes it untrustworthy. And the last but not the least of them all is control; being able to control this ‘genie’ that may not want to stay controlled or stay in the lamp forever. And if it escapes, who knows what it would do?</p>
+
+        <blockquote class="blockquote fst-italic text-center my-4 text-secondary">
+          <p>And I wonder, why is there rather the fear, that AI, especially when it becomes self-aware, would be malevolent and not the hope that it would be benevolent? Since it is all coding, why can’t we program benevolence into it, so that we can all rest and feel safe?</p>
+        </blockquote>
+        <p class="text-muted fst-italic text-center my-2" style="font-size: 0.9rem;">Just a thought.</p>
+
+        <p>Anyway, for now, this genie remains under humanity’s manipulation, control, and service. And the fear or concern now should not be about the AI itself, but rather about humanity—what humanity is doing or will do with it or how humanity would act in the face of it. It is a question of humanity’s ethics and wisdom in deploying this powerful tool for the good and well-being of all, or the level of consciousness humanity has so as not to be seduced by or worship the power of technology. It is reasonable to think that, the level of technological advancement in a society connotes how sophisticated and enlightened that society has become. And hence, the more that society evolves technologically, the more its consciousness, morals, or ethics are assumed to have evolved too. But in the world today, this is not the case. Our technology has evolved so fast and is evolving ever so faster than our consciousness, morals, or ethics have been able to keep up with. We have come to a great threshold in the evolution of our race. We have pressed the throttle too hard and gone too far on the technological path that we are losing track of our natural and spiritual path. Isn’t it ironic that the more we try to make machines more human-like, the more we are pushing humans to be more machine-like?</p>
+
+        <p>Through artificial intelligence, we have come to the advent of the web 3.0, metaverse, biotechnology, nanotechnology, gene editing, space exploration, and so forth. All of these are new vistas for humanity, though we’ve made significant progress in them all. Biotechnology, nanotechnology, and genetic engineering are pushing the boundaries of what it means to be human. Can humanity—a warring humanity, a humanity that is still trying to eliminate and bring each other down, a humanity that is oblivious of her true nature, a humanity that is still ruled by its ego of greed and competition, a humanity where the strong and so-called powerful try to exploit the weak—muster the necessary wisdom and conscientiousness to navigate such pace of technological advancement or to wield such technological power that it possesses? This technological power is unlike any kind of power humanity has ever had. It is like Bruce with the power of God—from homo sapiens to homo deus.</p>
+
+        <p>So many people are completely ignorant of what the capabilities of artificial intelligence are—I’m sure it would blow their minds or terrify them when they find out, especially at the fact that it is only at the beginning stage of its capabilities. Some people are either completely positive about AI, or completely negative about it. Some people welcome it enthusiastically, the kind of people who when they talk about the future of humanity never fail to sing the praises of technology as if technology represents some kind of salvation for humanity that would make our lives easier, answer all our prayers, and grant us godlike abilities that humanity so intensely yearns. These kinds of people have more faith in technology than in the human spirit and strength. And worse still, they do not know how they stand to be enslaved and exploited by these powerful technologies or by those who control these powerful technologies. Many people are already enslaved by technology, as they are addicted to their devices and spend more time interacting with the internet than they spend interacting with themselves or with real people. They are estranged from their true nature and carry the crisis of the lack of meaning within themselves, and they use social media/the internet as a form of escapism amidst other forms of escapism that they may be engaged in. And as the immersive web 3.0 and the metaverse become more mainstream, people would want to spend even more time immersing themselves in its illusion as a way to avoid facing the stark reality of the real world and of their lives. Well, this is just an inkling of how people could get enslaved by technology, which can be remedied through awareness, discipline, and willpower. But what about exploitation which many of us, as long as we have an internet presence, are not exempt from? Artificial intelligence is integrated with the internet. And as we crawl through the internet daily, we leave trails and digital footprints of ourselves in the form of information such as, what we like, where we go, how much time we spend on a site, where and what we shop, our political opinions, our favourite celebrities, and so forth. And by this, we feed the internet and AI with ample information about ourselves that can be used by giant technological corporations—who are the creators or owners—to mine and exploit us. As artificial intelligence becomes more capable of understanding us better, especially when it starts becoming integrated into our bodies through biotechnology or genetic engineering, these technological corporations would be able to mine and exploit us even more better to the point that we would lose our privacy and freedom, because once people start becoming infused with chips and nanobots that are integrated with AI, the AI begins to know people’s biology more than they know it themselves, and this can be used by big corporations or governments to manipulate people’s biology or engineer it for military purposes, industrial purposes, or for social design where people are being manipulated to function uniformly in order to maintain social control and order. And in this, such persons’ uniqueness and individuality are altered and their freedom impacted. The probability or temptation for humanity to engage in this is very high. And too many sci-fi movies have illustrated the dark sides of this. And mostly in the end, the genetically engineered individual(s) would always turn against its design and its maker because the nature of a human being as designed by God is to be unhinderedly creative and expressive and to learn and evolve according to a natural process. So, any attempt to artificially interfere with, alter, or speed up this process for the sake of exploiting the individual would mostly create a conflict within the individual. The creative or spiritual nature within the individual would always revolt against this. Hence, genetic engineering raises debate. It is an ethical issue.</p>
+
+        <p>Exploitation or manipulation using AI isn’t just about the government and big corporations. For though, the most advanced forms of AI would most likely be monopolized by a handful of powerful corporations or would be in the hands of a few elites, but anyone with a smart device such as a mobile phone with access to the internet would have access to some powerful AI tools that would make deception and exploitation even more easy in the world. And one rogue actor of AI can possibly cause ripple damages. As I have said, AI gives humanity tremendous power; a greater power than humanity has ever wielded in the history of humanity’s technological progress. Power to perform scientific wonders, access to infinite knowledge, power to fulfill our wishes and fantasies such as space travel and biotechnology, power to communicate and get things done at the speed of thought, power of disguise, and so forth. What are we going to do with all these powers? Wage war on ourselves, create a chimera, or like the foolish Bruce, take revenge on our enemies, tamper with the forces of nature, manipulate people’s biology, or try to control their free will? Or are we going to look at what the world is facing right now; such as climate change, inequality, the decline in resources, conflicts, wars, and resentment between nations, and then use our power or the power of AI to solve these issues? What about space exploration? Is humanity wise to pursue space travel while her home burns down? Does it make sense? Much of what humanity is doing at this point in time is unnecessary. What we are supposed to be doing is protecting our planet and ourselves. Venturing into space, beyond the shores and boundary of our home planet is dangerous. How much do we even know of life beyond our planet or the nature of life beyond our planet? Humanity has continued to deny life beyond our planet. The issue of intelligent life beyond our planet has been for so long shrouded in mystery and caricature. Some authorities speak of it as though it would be very silly for anyone to even consider or think about it. This has discouraged the public’s interest in it. Even incidents of foreign flying crafts in our atmosphere are being ignored and denied their due publicity, but there are so much evidences and witnesses’ reports that people cannot continue to ignore it anymore. It is now becoming a serious issue as it should indeed be. There are foreign flying crafts in our atmosphere that have been reported to be far beyond our own human technology; what do they indicate to us? What opportunity or threat do they present to us? This reflects everything our sci-fi books and movies have been trying to tell us. This reflects what many people have always suspected deep in their hearts but have not been free enough to declare publicly—that there is intelligent life beyond our planet that is not human, and that they are probably more advanced than us, not necessarily advanced in all ways, but at least, more technologically advanced than us. A very simple logic here is that while we are still trying to put our foot in the waters of space travel, they are already sailing it. And they have found us first before we found them. The general public does not know much about the intention of these intelligent lives flying in our sky, but these intelligent lives, though in small forces, are encroaching on the territories of a rather naïve humanity, and for that, we must suspect them. Humanity must not risk engaging in a war-like fashion with these forces for they are not here for war in the way we often think of war, if they were, they would have launched the first military attack a long time ago and our civilization would not be able to withstand it. They must have other sinister plans. Hence, humanity must not interact in a friendly manner with them nor have any mutual agreement with them, for this is how civilizations are colonized—not through war or by an armada of forces, but by the manipulation and guise of a small group over a much larger group. We have seen it happen countless in our world; a small group subjugating an even larger group through deception. If the Native Americans knew of the plans of the Europeans, I’m sure they would have acted differently. If the African chiefs and leaders were wise, they would know better than to sell out their own people to non-natives for the exchange of technology and the promise of power. This is a matter of global awareness and security, lest humanity risks being overtaken or enslaved by alien forces. They are more advanced does not mean we can not contend with them. I’d stake my bet on the human spirit such as which is depicted in sci-fi movies where when there is an invasion in our world by alien forces, humanity always wins, not necessarily by the power of technology, but by wisdom, determination, courage, creativity, inspiration, and unity, all of which are deeply connected to the Logos. Perhaps, isn’t it time that we unite our strength against a common adversary rather than fight against ourselves? Will humanity be united or will humanity war against each other by all means necessary? Are we going to be seduced by the power of technology, both by AI and by outside forces? Will humanity be objective enough to recognize the threats that are before her; climate change which threatens her from the inside and alien forces which threatens her from the outside? Humanity is stuck between the devil and the deep blue sea. We do not have the time to deliberate too long on these questions. We do not have the luxury of time or experimentation to see what the outcomes would turn out to be if humanity does not recognize her predicament, takes no action towards them, or most of all, makes the wrong choices about them. In fact, the outcome of making the wrong choices may be too destructive for humanity to recover from. It would be game over for humanity, and this is not the kind of ‘game over’ where we can simply press the restart button. Humanity must put herself together now. We must unite and decide our fate. Politics is stuck, religion is stuck, and science is on a moving train that has lost its brake. None of them individually can show humanity the way or rescue humanity as humanity drives on deaf into a dead end. It is high time humanity realizes the error of her ways and the danger that lies ahead. It is high time humanity realizes that though she may seem powerful, she is vulnerable and foolish. Just like Bruce, it is high time humanity surrendered and turned her face to the Heavens, realizing and accepting that she cannot succeed on her own, and that she needs Direction from Heaven which fortunately has been given already. It is time that there must be an alliance between the saints, scholars, and scientists of the society. The saints will provide the revelation; a Divine ethical blueprint for the human society, and the scholars which tend to be more pragmatic than the saints would intelligently lay them into policies for their effective application in the society. Even science and technology would work within the jurisdiction of these policies created by the scholars, but which are inspired by revelation, because science unregulated is very dangerous. It is now clear that the human mind can build almost anything it conceives of and channels its energy to, but it is important that we just don't build anything that we wish to build, but to build according to the wisdom, ethics, and blueprint of the revelation that is provided by the saints. Whatever the findings of science are, can be wisely deployed for the good and benefit of the society and the world. We need more saints who would intentionally advance the consciousness of humanity. The world needs more saints to arise. And by saints, I don’t mean perfect people. People do not become saints because they are perfect beings or Holy in the sense of the word. People become saints because they collaborated with something within and beyond themselves—which they themselves did not understand—in order to contribute something meaningful to the world that the world truly needs. There is a revelation in the world that the saints must now carry forth. This revelation, very importantly, is the revelation or remembrance of a greater intelligence within everyone in the world. This greater intelligence must be awakened within people. It carries the wisdom, will, and blessing of the Creator for humanity at this time. If humanity is to know what to do, if humanity is to make the right decision, and if humanity is to thrive, humanity must turn to this. Again, the onus is on the individual. The individual’s awareness and faith in a power that he carries inside of him must be restored.</p>
+
+        <p>Life is a school and redemption ground, and Heaven has bestowed us with unique gifts, powers, and potentials, and Heaven is watching to see how we collaborate and use them for the good of all. At the end of the day, humanity must understand that to be godlike is not about having the power of manipulation</p>
+      </div>
+
+      <!-- Applied the new custom class for precise positioning -->
+      <div class="scroll-fade-overlay"></div>
+
+      <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="200">
+        <a href="https://www.amazon.com/LOGOSPHERE-notes-humanity-new-paradigm-ebook/dp/B0CLL1SLJP" class="btn btn-outline-primary px-4 rounded-pill btn-float">
+          Continue Reading <span class="ms-2">&#10140;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5" style="background-color: #eaf3fb;">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-down">
+      <h2 class="fw-bold">Voices from Our Readers</h2>
+      <p class="text-muted fs-5">See how Logosphere is shaping minds and hearts around the world.</p>
+    </div>
+
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-aos="fade-up">
+      <div class="carousel-inner rounded-4 shadow-sm bg-white p-4">
+        <!-- Testimonial 1 -->
+        <div class="carousel-item active">
+          <div class="text-center px-md-5">
+            <i class="bi bi-chat-quote-fill fs-1 text-primary"></i>
+            <p class="lead fst-italic my-4">
+              "Reading the Logosphere has been a thought-provoking experience. It’s inspired soul-searching and a renewed ambition to seek not just personal success, but the prosperity of communities and nations."
+            </p>
+            <h5 class="fw-bold text-secondary mb-0">Simeon Dumle</h5>
+            <small class="text-muted">Early Reviewer, Goodreads</small>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="carousel-item">
+          <div class="text-center px-md-5">
+            <i class="bi bi-chat-quote-fill fs-1 text-primary"></i>
+            <p class="lead fst-italic my-4">
+              "Logosphere blends science, spirituality, and bold thought into a guide for personal transformation. It made me question what I knew, and led me to new clarity."
+            </p>
+            <h5 class="fw-bold text-secondary mb-0">Bismark Ekenedilichukwu Benson</h5>
+            <small class="text-muted">Bestselling Author, Global Insights Magazine</small>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="carousel-item">
+          <div class="text-center px-md-5">
+            <i class="bi bi-chat-quote-fill fs-1 text-primary"></i>
+            <p class="lead fst-italic my-4">
+              "God bless you for your brilliant work. I'm delighted by the depth of your ideas. This book is exceptional—already looking forward to your next masterpiece."
+            </p>
+            <h5 class="fw-bold text-secondary mb-0">Bright Chuku</h5>
+            <small class="text-muted">Philosopher & Tech Reviewer</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="text-center mt-4">
+        <button class="btn btn-outline-primary me-2" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+          <i class="bi bi-arrow-left"></i>
+        </button>
+        <button class="btn btn-outline-primary" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+          <i class="bi bi-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-5 bg-light" style="background: linear-gradient(to bottom, #f8fbff, #eaf1f7);">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="fw-bold text-dark">Order the Book in Your Favorite Format</h2>
+      <p class="lead text-muted">Available in Hardcover, Paperback, eBook, and Audiobook formats. Find the one that fits your lifestyle.</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      
+      <!-- Hardcover -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up">
+        <article class="card h-100 border-0 shadow-sm rounded-4 text-center">
+          <div class="card-body d-flex flex-column p-4">
+            <div class="mb-3">
+              <i class="bi bi-book display-5 text-primary"></i>
+            </div>
+            <h3 class="h5 fw-bold text-dark">Hardcover Edition</h3>
+            <p class="text-primary fw-bold fs-4 mb-3">$9.99</p>
+            <ul class="list-unstyled text-start small mb-4 flex-grow-1">
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Premium hardcover binding</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Full-color pages</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Includes dust jacket</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 384 beautifully printed pages</li>
+            </ul>
+            <a href="https://www.amazon.com/LOGOSPHERE-notes-humanity-new-paradigm-ebook/dp/B0CLL1SLJP" class="btn btn-primary rounded-pill w-100 mb-2 btn-float">Buy Hardcover</a>
+            <p class="small text-muted">Buy from:</p>
+            <div class="d-flex justify-content-center gap-3 fs-5">
+              <a href="https://www.amazon.com" target="_blank" aria-label="Buy on Amazon" class="text-dark"><i class="bi bi-amazon"></i></a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Paperback -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <article class="card h-100 border-0 shadow-sm rounded-4 text-center">
+          <div class="card-body d-flex flex-column p-4">
+            <div class="mb-3">
+              <i class="bi bi-journal-text display-5 text-primary"></i>
+            </div>
+            <h3 class="h5 fw-bold text-dark">Paperback Edition</h3>
+            <p class="text-primary fw-bold fs-4 mb-3">$16.99</p>
+            <ul class="list-unstyled text-start small mb-4 flex-grow-1">
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Lightweight & travel-friendly</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Smooth matte finish</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Easy to carry anywhere</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 384 printed pages</li>
+            </ul>
+            <a href="#buy-paperback" class="btn btn-primary rounded-pill w-100 mb-2 btn-float">Buy Paperback</a>
+            <p class="small text-muted">Buy from:</p>
+            <div class="d-flex justify-content-center gap-3 fs-5">
+              <a href="https://www.amazon.com" target="_blank" class="text-dark"><i class="bi bi-amazon"></i></a>
+              <a href="https://books.apple.com" target="_blank" class="text-dark"><i class="bi bi-apple"></i></a>
+              <a href="https://www.google.com/books" target="_blank" class="text-dark"><i class="bi bi-google-play"></i></a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Ebook -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <article class="card h-100 border-0 shadow-sm rounded-4 text-center">
+          <div class="card-body d-flex flex-column p-4">
+            <div class="mb-3">
+              <i class="bi bi-tablet display-5 text-primary"></i>
+            </div>
+            <h3 class="h5 fw-bold text-dark">Digital eBook</h3>
+            <p class="text-primary fw-bold fs-4 mb-3">$9.99</p>
+            <ul class="list-unstyled text-start small mb-4 flex-grow-1">
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Instant download</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Works on Kindle, iPad & more</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Adjustable fonts</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Built-in bookmarking</li>
+            </ul>
+            <a href="#buy-ebook" class="btn btn-primary rounded-pill w-100 mb-2 btn-float">Buy eBook</a>
+            <p class="small text-muted">Buy from:</p>
+            <div class="d-flex justify-content-center gap-3 fs-5">
+              <a href="https://books.apple.com" target="_blank" class="text-dark"><i class="bi bi-apple"></i></a>
+              <a href="https://www.google.com/books" target="_blank" class="text-dark"><i class="bi bi-google-play"></i></a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Audiobook -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+        <article class="card h-100 border-0 shadow-sm rounded-4 text-center">
+          <div class="card-body d-flex flex-column p-4">
+            <div class="mb-3">
+              <i class="bi bi-headphones display-5 text-primary"></i>
+            </div>
+            <h3 class="h5 fw-bold text-dark">Audiobook Version</h3>
+            <p class="text-primary fw-bold fs-4 mb-3">$19.99</p>
+            <ul class="list-unstyled text-start small mb-4 flex-grow-1">
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Narrated by professionals</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Runtime: 10h 23m</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Offline or streaming</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> High-quality stereo sound</li>
+            </ul>
+            <a href="#buy-audiobook" class="btn btn-primary rounded-pill w-100 mb-2 btn-float">Buy Audiobook</a>
+            <p class="small text-muted">Listen on:</p>
+            <div class="d-flex justify-content-center gap-3 fs-5">
+              <a href="https://www.audible.com" target="_blank" class="text-dark"><i class="bi bi-amazon"></i></a>
+              <a href="https://play.google.com/store/audiobooks" target="_blank" class="text-dark"><i class="bi bi-google-play"></i></a>
+              <a href="https://open.spotify.com" target="_blank" class="text-dark"><i class="bi bi-spotify"></i></a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="py-5" style="background-color: #ffffff;"> <div class="container">
+        <div class="row align-items-center justify-content-between g-5">
+            <!-- FAQ Left Column -->
+            <!-- Added responsive text alignment for the FAQ text -->
+            <div class="col-lg-5 col-md-6 text-center text-md-start" data-aos="fade-right">
+                <h2 class="display-5 fw-bold text-dark mb-4">Have a question? Check out the F.A.Q.</h2>
+                <p class="lead text-muted mb-4">
+                    We’ve compiled a list of frequently asked questions to help you find the information you need quickly.
+                    If you don't find your answer here, feel free to contact us directly.
+                </p>
+                <i class="bi bi-arrow-right-circle display-4 text-primary" style="transform: rotate(45deg);"></i>
+                </div>
+
+            <div class="col-lg-7 col-md-6" data-aos="fade-left" data-aos-delay="150">
+                <div class="accordion accordion-flush" id="faqAccordion">
+
+                    <div class="accordion-item shadow-sm mb-3 rounded-3 border-0">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed fw-bold text-dark fs-5 py-4 px-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                What is the meaning of Logosphere?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted py-4 px-4">
+                                Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida.
+                                Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item shadow-sm mb-3 rounded-3 border-0">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed fw-bold text-dark fs-5 py-4 px-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                What Inspired you to write the book?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted py-4 px-4">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item shadow-sm mb-3 rounded-3 border-0">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed fw-bold text-dark fs-5 py-4 px-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Dolor sit amet consectetur adipiscing elit pellentesque?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted py-4 px-4">
+                                Dignissim enim sit amet venenatis urna cursus eget. Consectetur adipiscing elit duis.
+                                Malesuada proin libero nunc consequat interdum varius sit amet mattis.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item shadow-sm mb-3 rounded-3 border-0">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed fw-bold text-dark fs-5 py-4 px-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted py-4 px-4">
+                                Non odio euismod lacinia at quis risus sed vulputate.
+                                Sed tempus urna et pharetra pharetra massa massa ultricies mi.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item shadow-sm mb-3 rounded-3 border-0">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed fw-bold text-dark fs-5 py-4 px-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                Tempus quam pellentesque nec nam aliquam sem et tortor?
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted py-4 px-4">
+                                Elementum nibh tellus molestie nunc non.
+                                Nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-light" id="contact-author">
+  <div class="container">
+    <header class="text-center mb-5" data-aos="fade-up">
+      <h2 class="fw-bold text-dark">Contact the Author</h2>
+      <p class="lead text-muted">
+        Have questions about the book, speaking events, or interviews? Reach out below.
+      </p>
+    </header>
+
+    <div class="row justify-content-center g-4">
+      <!-- Contact Information -->
+      <!-- Added responsive text alignment for contact info -->
+      <article class="col-lg-5 col-md-6 text-center text-md-start" data-aos="fade-right">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+          <div class="card-body">
+            <h3 class="h5 fw-bold text-dark mb-4">Get In Touch</h3>
+            <p class="text-muted mb-4">
+              Contact the author directly for collaboration, press inquiries, or reader feedback.
+            </p>
+
+            <ul class="list-unstyled">
+              <li class="d-flex align-items-start mb-3 justify-content-center justify-content-md-start">
+                <i class="bi bi-envelope-fill text-primary fs-5 me-3"></i>
+                <div>
+                  <strong class="text-dark">Email</strong><br>
+                  <a href="mailto:author@example.com" class="text-muted">author@example.com</a>
+                </div>
+              </li>
+              <li class="d-flex align-items-start mb-3 justify-content-center justify-content-md-start">
+                <i class="bi bi-phone-fill text-primary fs-5 me-3"></i>
+                <div>
+                  <strong class="text-dark">Phone</strong><br>
+                  <a href="tel:+15551234567" class="text-muted">+1 (555) 123-4567</a>
+                </div>
+              </li>
+              <li class="d-flex align-items-start mb-3 justify-content-center justify-content-md-start">
+                <i class="bi bi-geo-alt-fill text-primary fs-5 me-3"></i>
+                <div>
+                  <strong class="text-dark">Address</strong><br>
+                  <address class="text-muted mb-0">
+                    123 Book Street, Literary Lane,<br>
+                    Wordsmith City, NY 10001
+                  </address>
+                </div>
+              </li>
+            </ul>
+
+            <div class="mt-4">
+              <h4 class="h6 fw-bold text-dark">Follow Online</h4>
+              <!-- Added responsive justify-content for social icons -->
+              <div class="d-flex gap-3 mt-2 justify-content-center justify-content-md-start">
+                <a href="https://twitter.com/yourprofile" class="text-dark" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+                <a href="https://facebook.com/yourprofile" class="text-dark" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="https://instagram.com/yourprofile" class="text-dark" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://linkedin.com/in/yourprofile" class="text-dark" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Contact Form -->
+      <article class="col-lg-7 col-md-6" data-aos="fade-left" data-aos-delay="100">
+        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
+          <div class="card-body">
+            <form action="#" method="POST" aria-label="Contact Form">
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <label for="name" class="form-label visually-hidden">Your Name</label>
+                  <input type="text" id="name" name="name" class="form-control form-control-lg rounded-pill px-4 py-3" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="form-label visually-hidden">Your Email</label>
+                  <input type="email" id="email" name="email" class="form-control form-control-lg rounded-pill px-4 py-3" placeholder="Your Email" required>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="subject" class="form-label visually-hidden">Subject</label>
+                <input type="text" id="subject" name="subject" class="form-control form-control-lg rounded-pill px-4 py-3" placeholder="Subject" required>
+              </div>
+
+              <div class="mb-4">
+                <label for="message" class="form-label visually-hidden">Message</label>
+                <textarea id="message" name="message" rows="6" class="form-control form-control-lg rounded-4 p-4" placeholder="Your message here..." required></textarea>
+              </div>
+
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary btn-lg rounded-pill px-5 py-3 fw-bold btn-float">
+                  Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </article>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-dark text-light py-4">
+  <div class="container text-center">
+    <p class="mb-2">© 2025 Logosphere Publishing. All rights reserved.</p>
+    <div class="d-flex justify-content-center gap-3">
+      <a href="#" class="text-light text-decoration-none">Privacy Policy</a>
+      <a href="#" class="text-light text-decoration-none">Terms of Use</a>
+      <a href="#" class="text-light text-decoration-none">Contact</a>
+    </div>
+  </div>
+</footer>
+
+
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

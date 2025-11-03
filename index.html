@@ -1,140 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Logosphere</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logosphere — A New Paradigm</title>
 
-  <!-- Google Fonts - Inter -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Bootstrap Icons CDN -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-
-  <!-- Animate.css -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-
-  <!-- AOS CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
-
-<style>
-    /* Prevent horizontal scrollbar on body/html */
-    html, body {
-      overflow-x: hidden;
-      font-family: 'Inter', sans-serif; /* Ensuring Inter font is applied */
-    }
-
-    /* Hero Section */
-#hero {
-  background: url('../img/landing-bg.jpg') center center no-repeat;
-  background-size: cover;
-  height: 100vh;
-  color: #fff;
-  position: relative;
-}
-
-#hero::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-}
-
-#hero .container {
-  position: relative;
-  z-index: 1;
-}
-
-/* Float Effect on Hover */
-.btn-float {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.btn-float:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-.icon-box {
-  width: 50px;
-  height: 50px;
-  background: #f0f6ff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.reading {
-  border-radius: 1rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-img:hover {
-  transform: translateY(-5px);
-  transition: transform 0.3s ease;
-}
-
-/* Custom style for the scroll fade overlay to precisely match parent padding */
-.scroll-fade-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 1.5rem; /* Matches Bootstrap's p-4 (default padding) */
-    right: 1.5rem; /* Matches Bootstrap's p-4 (default padding) */
-    height: 60px;
-    background: linear-gradient(to bottom, rgba(255,255,255,0), white);
-    pointer-events: none;
-    z-index: 2; /* Ensure it's above content */
-}
-
-/* Adjust for medium screens and up to match p-md-5 */
-@media (min-width: 768px) { /* md breakpoint */
-    .scroll-fade-overlay {
-        left: 3rem; /* Matches Bootstrap's p-md-5 */
-        right: 3rem; /* Matches Bootstrap's p-md-5 */
-    }
-}
-    
-</style>
-  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>  
 </head>
+<link rel="stylesheet" href="style.css">
 <body>
 
-<!-- HERO SECTION -->
-<section class="py-5" style="background: #f8faff;">
-  <div class="container">
-    <div class="row align-items-center">
-      <!-- Left Content -->
-      <!-- Added responsive text alignment to the column containing hero text -->
-      <div class="col-md-6 mb-4 mb-md-0 text-center text-md-start" data-aos="fade-right">
-        <span class="badge rounded-pill bg-primary animate__animated animate__pulse animate__infinite">
-          <!-- Changed width attribute to max-width style for better responsiveness -->
-          <img style="max-width: 50px;" class="img-fluid" src="Img/Logosphere logo.png" alt="">
-        </span>
-        <h1 class="display-5 fw-bold animate__animated animate__fadeInUp">Logosphere</h1>
-        <p class="lead text-muted">My notes to humanity for a new paradigm</p>
-        <p class="fw-semibold mt-3 mb-1">By <strong>Michael Uzoma Okoro</strong></p>
-        <p>
-          From climate change to war... <br>
-          This book presents the Logos as the key to redeeming our world.
-        </p>
-        <div class="d-flex gap-3 mt-4 justify-content-center justify-content-md-start">
-          <a href="https://www.amazon.com/LOGOSPHERE-notes-humanity-new-paradigm-ebook/dp/B0CLL1SLJP" class="btn btn-primary text-white px-4 py-2 fw-semibold animate__animated animate__fadeInLeft btn-float">Get Your Copy</a>
-          <a href="#read-excerpt" class="btn btn-outline-primary px-4 py-2 fw-semibold animate__animated animate__fadeInRight btn-float">Read Preview</a>
-        </div>
-      </div>
+<button id="themeToggle" class="btn btn-dark theme-btn"><i class="bi bi-moon"></i></button>
+<section class="hero-fire position-relative overflow-hidden">
+<!-- subtle animated circles -->
+<div class="circle-anim bg-primary-subtle"></div>
+<div class="circle-anim bg-info-subtle delay-1"></div>
+<div class="circle-anim bg-light delay-2"></div>
 
-      <!-- Right Book Cover -->
-      <div class="col-md-6 text-center" data-aos="zoom-in">
-        <img src="Img/book-image.webp" alt="Book Cover" class="img-fluid" style="max-height: 450px; transform: rotate(-2deg);">
-      </div>
-    </div>
-  </div>
+
+<div class="container position-relative">
+<div class="row align-items-center">
+
+
+<!-- Left -->
+<div class="col-lg-6 mb-4 mb-lg-0 text-center text-lg-start" data-aos="fade-right">
+<img src="Img/Logosphere logo.png" style="width:70px" class="mb-3">
+<h1 class="title mb-3">Awaken The Logos.<br>Reimagine Humanity.</h1>
+<p class="subtext mb-4">A transformational journey into truth, order, and the rebirth of civilization — rooted in divine logic and eternal wisdom.</p>
+
+
+<div class="d-flex gap-3 mb-3 flex-wrap justify-content-center justify-content-lg-start">
+<a href="#buy" class="btn btn-lg btn-light px-4 fw-bold">Buy Now</a>
+<a href="#read" class="btn btn-lg btn-outline-light px-4 fw-bold">Read Free Sample</a>
+</div>
+</div>
+
+
+<!-- Right -->
+<div class="col-lg-6 text-center position-relative mt-4 mt-lg-0" data-aos="zoom-in">
+<div class="position-relative d-inline-block">
+<img src="Img/book-image.webp" class="img-fluid floating-book" style="max-height:480px;">
+<!-- pill stuck to book -->
+<div class="sales-pill book-pill animate__animated animate__fadeInUp animate__delay-1s">
+<i class="bi bi-people-fill"></i> 200+ copies sold
+</div>
+</div>
+</div>
+
+
+</div>
+</div>
 </section>
 
 <!-- ABOUT SECTION -->
@@ -201,78 +120,88 @@ img:hover {
 </section>
 
 <!-- WHY SPECIAL SECTION (REIMAGINED) -->
-<section class="py-5" style="background-color: #f8faff;">
-  <div class="container" data-aos="fade-up">
-    <div class="row align-items-center">
-      
-      <!-- LEFT SIDE: TEXT FEATURES -->
-      <div class="col-md-6">
-        <div class="mb-4 text-center text-md-start"> <!-- Added responsive text alignment -->
-          <h2 class="fw-bold">Why This Book Stands Out</h2>
-          <p class="text-muted">A journey into truth, logic, and a better future for humanity</p>
-        </div>
+<section class="py-5 py-lg-6" style="background-color: #f0f6ff;">
 
-        <!-- Item 1 -->
-        <!-- Adjusted flex classes for mobile stacking and centering -->
-        <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start mb-4" data-aos="fade-up">
-          <div class="icon-box me-md-3 mb-2 mb-md-0"> <!-- Added mb-2 for vertical spacing on mobile -->
+  <div class="container" data-aos="fade-up">
+    
+    <!-- SECTION HEADER -->
+    <section class="py-5 py-lg-6" style="background-color: #f0f6ff;">
+
+  <div class="container" data-aos="fade-up">
+    
+    <!-- SECTION HEADER -->
+    <div class="text-center mb-5 pb-3">
+      <h2 class="display-5 fw-bolder text-dark mb-2">Why This Book Stands Out</h2>
+      <p class="lead text-secondary">A journey into truth, logic, and a new paradigm for humanity.</p>
+    </div>
+
+    <div class="row justify-content-center g-4">
+
+      <!-- Feature 1: Revolutionary Ideas -->
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <!-- Changed text-center to text-start -->
+        <div class="card p-4 h-100 shadow-lg border-0 rounded-4 feature-card text-start" data-aos="fade-up">
+          <!-- Removed mx-auto -->
+          <div class="icon-circle mb-3" style="width: 60px; height: 60px; background-color: #e3f2fd; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
             <i class="bi bi-lightbulb-fill text-primary fs-3"></i>
           </div>
-          <div class="text-center text-md-start"> <!-- Added responsive text alignment -->
-            <h5 class="fw-bold mb-1">Revolutionary Ideas</h5>
-            <p class="text-muted mb-0">
-              This book doesn't recycle trends — it proposes bold, paradigm-shifting concepts you won’t find anywhere else.
-            </p>
-          </div>
-        </div>
-
-        <!-- Item 2 -->
-        <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start mb-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="icon-box me-md-3 mb-2 mb-md-0">
-            <i class="bi bi-chat-left-text-fill text-success fs-3"></i>
-          </div>
-          <div class="text-center text-md-start">
-            <h5 class="fw-bold mb-1">Meaningful Conversations</h5>
-            <p class="text-muted mb-0">
-              Written in a compelling voice that feels like a real dialogue between the author and your inner thinker.
-            </p>
-          </div>
-        </div>
-
-        <!-- Item 3 -->
-        <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start mb-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="icon-box me-md-3 mb-2 mb-md-0">
-            <i class="bi bi-globe-americas text-warning fs-3"></i>
-          </div>
-          <div class="text-center text-md-start">
-            <h5 class="fw-bold mb-1">Global Relevance</h5>
-            <p class="text-muted mb-0">
-              Addresses pressing global issues like climate change, war, and society with depth and clarity.
-            </p>
-          </div>
-        </div>
-
-        <!-- Item 4 -->
-        <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start mb-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="icon-box me-md-3 mb-2 mb-md-0">
-            <i class="bi bi-star-fill text-danger fs-3"></i>
-          </div>
-          <div class="text-center text-md-start">
-            <h5 class="fw-bold mb-1">Spiritual Depth</h5>
-            <p class="text-muted mb-0">
-              Goes beyond the surface to explore the <em>Logos</em> — a timeless concept of divine wisdom and truth.
-            </p>
-          </div>
+          <h5 class="fw-bolder mb-2 text-dark">Revolutionary Ideas</h5>
+          <p class="text-muted small mb-0">
+            This book doesn't recycle trends—it proposes bold, paradigm-shifting concepts you won’t find anywhere else.
+          </p>
         </div>
       </div>
 
-      <!-- RIGHT SIDE: IMAGE -->
-      <div class="col-md-6 text-center" data-aos="fade-left" data-aos-delay="400">
-        <img src="Img/Reading.png" alt="Reading Illustration" class="img-fluid reading" style="max-height: 420px;">
+      <!-- Feature 2: Meaningful Conversations -->
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <!-- Changed text-center to text-start -->
+        <div class="card p-4 h-100 shadow-lg border-0 rounded-4 feature-card text-start" data-aos="fade-up" data-aos-delay="100">
+          <!-- Removed mx-auto -->
+          <div class="icon-circle mb-3" style="width: 60px; height: 60px; background-color: #e3f2fd; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+            <!-- Using a slight accent color change for visual variety -->
+            <i class="bi bi-chat-left-text-fill text-info fs-3"></i> 
+          </div>
+          <h5 class="fw-bolder mb-2 text-dark">Meaningful Dialogue</h5>
+          <p class="text-muted small mb-0">
+            Written in a compelling voice that feels like a real dialogue between the author and your inner thinker.
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature 3: Global Relevance -->
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <!-- Changed text-center to text-start -->
+        <div class="card p-4 h-100 shadow-lg border-0 rounded-4 feature-card text-start" data-aos="fade-up" data-aos-delay="200">
+          <!-- Removed mx-auto -->
+          <div class="icon-circle mb-3" style="width: 60px; height: 60px; background-color: #e3f2fd; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+            <i class="bi bi-globe-americas text-warning fs-3"></i>
+          </div>
+          <h5 class="fw-bolder mb-2 text-dark">Global Relevance</h5>
+          <p class="text-muted small mb-0">
+            Addresses pressing global issues like climate change, war, and society with depth and clarity.
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature 4: Spiritual Depth -->
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <!-- Changed text-center to text-start -->
+        <div class="card p-4 h-100 shadow-lg border-0 rounded-4 feature-card text-start" data-aos="fade-up" data-aos-delay="300">
+          <!-- Removed mx-auto -->
+          <div class="icon-circle mb-3" style="width: 60px; height: 60px; background-color: #e3f2fd; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+            <i class="bi bi-star-fill text-danger fs-3"></i>
+          </div>
+          <h5 class="fw-bolder mb-2 text-dark">Spiritual Depth</h5>
+          <p class="text-muted small mb-0">
+            Goes beyond the surface to explore the *Logos* — a timeless concept of divine wisdom and truth.
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+
 
 <section class="py-5" style="background-color: #f0f6ff;">
   <div class="container d-flex flex-column flex-lg-row align-items-start gap-5 ">
@@ -749,12 +678,20 @@ img:hover {
 
 
 
-<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init();</script>
 <script>
-  AOS.init();
+const htmlEl = document.documentElement;
+const btn = document.getElementById("themeToggle");
+btn.addEventListener("click", () => {
+htmlEl.dataset.theme = htmlEl.dataset.theme === "dark" ? "light" : "dark";
+btn.innerHTML = htmlEl.dataset.theme === "dark"
+? `<i class='bi bi-sun'></i>`
+: `<i class='bi bi-moon'></i>`;
+});
 </script>
-<script src="assets/js/main.js"></script>
+
+
 </body>
 </html>

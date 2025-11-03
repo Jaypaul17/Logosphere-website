@@ -1,0 +1,113 @@
+body { font-family: "Segoe UI", sans-serif; overflow-x: hidden; background: #f8faff; }
+
+/* FIRE HERO */
+.hero-fire {
+position: relative;
+min-height: 100vh;
+display: flex;
+align-items: center;
+background: linear-gradient(120deg, #0a2540, #00408b);
+color: #fff;
+padding: 70px 0;
+}
+
+
+.hero-fire .title {
+font-size: 3.5rem;
+font-weight: 800;
+line-height: 1.2;
+}
+
+
+.hero-fire .subtext {
+font-size: 1.15rem;
+opacity: .9;
+}
+
+
+.floating-book {
+transform: rotate(-3deg);
+transition: .5s ease;
+}
+.floating-book:hover { transform: rotate(0deg) scale(1.05); }
+
+
+/* Floating Pill */
+.sales-pill {
+background: rgba(255,255,255,0.15);
+backdrop-filter: blur(6px);
+padding: 8px 18px;
+border-radius: 50px;
+font-size: .9rem;
+font-weight: 600;
+display: inline-flex;
+gap: 6px;
+align-items: center;
+}
+
+
+/* Dark mode */
+[data-theme="dark"] {
+background-color: #0f172a;
+color: #e2e8f0;
+}
+[data-theme="dark"] .hero-fire {
+background: linear-gradient(120deg,#020617,#082f49);
+}
+
+
+/* Toggle */
+.theme-btn {
+position: fixed; right: 18px; top: 18px;
+z-index: 2000;
+width: 46px; height: 46px;
+border-radius: 50%;
+}
+
+/* Bouncing circles */
+.circle-anim {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  animation: floatBubble 6s infinite ease-in-out;
+  opacity: 0.18;
+}
+
+.circle-anim.delay-1 { animation-delay: 1s; }
+.circle-anim.delay-2 { animation-delay: 2s; }
+
+.circle-anim:nth-child(1) { top: 10%; left: -60px; }
+.circle-anim:nth-child(2) { bottom: 15%; right: -60px; }
+.circle-anim:nth-child(3) { top: 60%; left: 40%; }
+
+@keyframes floatBubble {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px) scale(1.05); }
+  100% { transform: translateY(0); }
+}
+
+/* Pill stuck to book */
+.book-pill {
+  position: absolute;
+  bottom: -20px;
+  right: -10px;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(8px);
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(255,255,255,0.4);
+}
+
+@media (max-width: 768px) {
+  .book-pill {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: -15px;
+  }
+}

@@ -1,70 +1,124 @@
-body { font-family: "Segoe UI", sans-serif; overflow-x: hidden; background: #f8faff; }
+:root {
+  /* Light Mode */
+  --bg-page: #f8faff;
+  --text-main: #212529;
+  --text-muted: #6c757d;
+  --color-primary: #007bff;
+  --hero-bg-top: #0a2540;
+  --hero-bg-bottom: #00408b;
+  --hero-circle-1: rgba(0, 123, 255, 0.15);
+  --hero-circle-2: rgba(23, 162, 184, 0.15);
+  --hero-circle-3: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] {
+  /* Dark Mode Overrides */
+  --bg-page: #0f172a;
+  --text-main: #e2e8f0;
+  --text-muted: #94a3b8;
+  --color-primary: #4da6ff; /* Lighter blue for dark contrast */
+  --hero-bg-top: #020617;
+  --hero-bg-bottom: #082f49;
+  --hero-circle-1: rgba(77, 166, 255, 0.15);
+  --hero-circle-2: rgba(0, 255, 255, 0.15);
+  --hero-circle-3: rgba(255, 255, 255, 0.05);
+}
+
+/* FIX 1: Ensure full viewport background coverage and apply theme variables */
+html, body { 
+  font-family: "Segoe UI", sans-serif; 
+  overflow-x: hidden; 
+  background: var(--bg-page); /* Apply dynamic background to both for seamless transition */
+  color: var(--text-main);
+  transition: background-color 0.5s, color 0.5s;
+}
+
+/* Dynamic Text Colors - Apply variables to sections outside Hero */
+h1, h2, h3, h4, h5, h6, strong, p { color: var(--text-main); }
+.text-muted, .text-secondary { color: var(--text-muted) !important; }
+.text-primary { color: var(--color-primary) !important; }
+
+/* Dynamic Card / BG Colors */
+.bg-white, .bg-light, .card, .accordion-body, .form-control {
+  background-color: var(--bg-page) !important;
+  color: var(--text-main) !important;
+}
+
+/* FIX: Footer background consistency */
+footer.bg-primary {
+  background-color: var(--color-primary) !important;
+  color: white !important;
+}
+
 
 /* FIRE HERO */
 .hero-fire {
-position: relative;
-min-height: 100vh;
-display: flex;
-align-items: center;
-background: linear-gradient(120deg, #0a2540, #00408b);
-color: #fff;
-padding: 70px 0;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  /* Use dynamic colors for gradient */
+  background: linear-gradient(120deg, var(--hero-bg-top), var(--hero-bg-bottom));
+  color: #fff;
+  padding: 70px 0;
 }
-
 
 .hero-fire .title {
-font-size: 3.5rem;
-font-weight: 800;
-line-height: 1.2;
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
 }
-
 
 .hero-fire .subtext {
-font-size: 1.15rem;
-opacity: .9;
+  font-size: 1.15rem;
+  opacity: .9;
 }
 
-
 .floating-book {
-transform: rotate(-3deg);
-transition: .5s ease;
+  transform: rotate(-3deg);
+  transition: .5s ease;
 }
 .floating-book:hover { transform: rotate(0deg) scale(1.05); }
 
 
 /* Floating Pill */
 .sales-pill {
-background: rgba(255,255,255,0.15);
-backdrop-filter: blur(6px);
-padding: 8px 18px;
-border-radius: 50px;
-font-size: .9rem;
-font-weight: 600;
-display: inline-flex;
-gap: 6px;
-align-items: center;
+  /* Use fixed color white for contrast against dark hero bg */
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(6px);
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: .9rem;
+  font-weight: 600;
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
 }
 
 
-/* Dark mode */
-[data-theme="dark"] {
-background-color: #0f172a;
-color: #e2e8f0;
-}
-[data-theme="dark"] .hero-fire {
-background: linear-gradient(120deg,#020617,#082f49);
-}
-
-
-/* Toggle */
+/* Dark mode Toggle */
 .theme-btn {
-position: fixed; right: 18px; top: 18px;
-z-index: 2000;
-width: 46px; height: 46px;
-border-radius: 50%;
+  position: fixed; 
+  right: 18px; 
+  top: 18px;
+  z-index: 2000;
+  width: 46px; 
+  height: 46px;
+  border-radius: 50%;
+  /* Custom styling for the button using variables */
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  border: 2px solid var(--text-muted);
+  transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+}
+.theme-btn:hover {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
 }
 
-/* Bouncing circles */
+
+/* Bouncing circles (Use dynamic colors) */
 .circle-anim {
   position: absolute;
   width: 200px;
@@ -74,12 +128,10 @@ border-radius: 50%;
   opacity: 0.18;
 }
 
-.circle-anim.delay-1 { animation-delay: 1s; }
-.circle-anim.delay-2 { animation-delay: 2s; }
+.circle-anim:nth-child(1) { background-color: var(--hero-circle-1); top: 10%; left: -60px; }
+.circle-anim:nth-child(2) { background-color: var(--hero-circle-2); bottom: 15%; right: -60px; animation-delay: 1s; }
+.circle-anim:nth-child(3) { background-color: var(--hero-circle-3); top: 60%; left: 40%; animation-delay: 2s; }
 
-.circle-anim:nth-child(1) { top: 10%; left: -60px; }
-.circle-anim:nth-child(2) { bottom: 15%; right: -60px; }
-.circle-anim:nth-child(3) { top: 60%; left: 40%; }
 
 @keyframes floatBubble {
   0% { transform: translateY(0); }
@@ -87,11 +139,11 @@ border-radius: 50%;
   100% { transform: translateY(0); }
 }
 
-/* Pill stuck to book */
+/* FIX 2: Pill stuck to book (Adjusted position) */
 .book-pill {
   position: absolute;
-  bottom: -20px;
-  right: -10px;
+  bottom: 20px; /* Moved up from -20px */
+  right: 20px; /* Moved in from -10px */
   background: rgba(255,255,255,0.2);
   backdrop-filter: blur(8px);
   padding: 10px 20px;
@@ -106,8 +158,42 @@ border-radius: 50%;
 
 @media (max-width: 768px) {
   .book-pill {
-    right: 50%;
-    transform: translateX(50%);
-    bottom: -15px;
+    /* Center pill correctly on mobile beneath the book */
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin-top: 15px;
+  }
+}
+
+/* Mobile: stack in correct order — book first, text last */
+@media (max-width: 991.98px) {
+  .hero-fire .row { 
+    flex-direction: column-reverse !important;
+  }
+
+  /* Logo always left on mobile */
+  .hero-fire img[style*="Logosphere"] {
+    display: block;
+    margin-left: 0;
+    text-align: left;
+  }
+
+  /* Title & paragraph left-align */
+  .hero-fire .col-lg-6 {
+    text-align: left !important;
+  }
+
+  /* Buttons last on mobile */
+  .hero-fire .col-lg-6 .d-flex {
+    order: 10;
+  }
+}
+
+/* Small screens book sizing */
+@media (max-width: 575.98px) {
+  .floating-book {
+    max-width: 200px;
+    margin: 0 auto;
   }
 }

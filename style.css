@@ -1,137 +1,115 @@
 :root {
-  /* Light Mode */
-  --bg-page: #f8faff;
-  --text-main: #ffffff;
-  --text-muted: #6c757d;
-  --color-primary: #007bff;
-  --hero-bg-top: #0a2540;
-  --hero-bg-bottom: #00408b;
-  --hero-circle-1: rgba(0, 123, 255, 0.15);
-  --hero-circle-2: rgba(23, 162, 184, 0.15);
-  --hero-circle-3: rgba(255, 255, 255, 0.1);
+    /* Light Mode */
+    --bg-page: #f8faff;
+    --bg-secondary: #ffffff;
+    --text-main: #0f172a; /* FIXED: dark text in light mode */
+    --text-muted: #64748b;
+    --color-primary: #007bff;
+    --hero-bg-top: #0a2540;
+    --hero-bg-bottom: #00408b;
+    --hero-circle-1: rgba(0, 123, 255, 0.15);
+    --hero-circle-2: rgba(23, 162, 184, 0.15);
+    --hero-circle-3: rgba(255, 255, 255, 0.1);
+    --shadow-color: rgba(0,0,0,0.1);
+    --about-badge-background: rgba(255,255,255,0.7);
 }
 
 [data-theme="dark"] {
-  /* Dark Mode Overrides */
-  --bg-page: #0f172a;
-  --text-main: #e2e8f0;
-  --text-muted: #94a3b8;
-  --color-primary: #4da6ff; /* Lighter blue for dark contrast */
-  --hero-bg-top: #020617;
-  --hero-bg-bottom: #082f49;
-  --hero-circle-1: rgba(77, 166, 255, 0.15);
-  --hero-circle-2: rgba(0, 255, 255, 0.15);
-  --hero-circle-3: rgba(255, 255, 255, 0.05);
+    --bg-page: #0f172a;
+    --bg-secondary: #1e293b;
+    --text-main: #e2e8f0;
+    --text-muted: #94a3b8;
+    --color-primary: #4da6ff;
+    --hero-bg-top: #020617;
+    --hero-bg-bottom: #082f49;
+    --hero-circle-1: rgba(77, 166, 255, 0.15);
+    --hero-circle-2: rgba(0, 255, 255, 0.15);
+    --hero-circle-3: rgba(255, 255, 255, 0.05);
+    --shadow-color: rgba(0,0,0,0.5);
+    --about-badge-background: rgba(0,0,0,0.5);
 }
 
-/* FIX 1: Ensure full viewport background coverage and apply theme variables */
-html, body { 
-  font-family: "Segoe UI", sans-serif; 
-  overflow-x: hidden; 
-  background: var(--bg-page); /* Apply dynamic background to both for seamless transition */
-  color: var(--text-main);
-  transition: background-color 0.5s, color 0.5s;
+/* ==============================
+   BASE
+============================== */
+html, body {
+    font-family: 'Inter', "Segoe UI", sans-serif;
+    background: var(--bg-page);
+    color: var(--text-main);
+    overflow-x: hidden;
+    transition: .4s ease;
 }
 
-/* Dynamic Text Colors - Apply variables to sections outside Hero */
-h1, h2, h3, h4, h5, h6, strong, p { color: var(--text-main); }
+h1, h2, h3, h4, h5, h6, strong { color: var(--text-main); }
 .text-muted, .text-secondary { color: var(--text-muted) !important; }
 .text-primary { color: var(--color-primary) !important; }
 
-/* Dynamic Card / BG Colors */
 .bg-white, .bg-light, .card, .accordion-body, .form-control {
-  background-color: var(--bg-page) !important;
-  color: var(--text-main) !important;
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-main) !important;
 }
 
-/* FIX: Footer background consistency */
-footer.bg-primary {
-  background-color: var(--color-primary) !important;
-  color: white !important;
-}
+.shadow-lg { box-shadow: 0 1rem 3rem var(--shadow-color) !important; }
 
-
-/* FIRE HERO */
-.hero-fire {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  /* Use dynamic colors for gradient */
-  background: linear-gradient(120deg, var(--hero-bg-top), var(--hero-bg-bottom));
-  color: #fff;
-  padding: 70px 0;
-}
-
-.hero-fire .title {
-  font-size: 3.5rem;
-  font-weight: 800;
-  line-height: 1.2;
-}
-
-.hero-fire .subtext {
-  font-size: 1.15rem;
-  opacity: .9;
-}
+/* ==============================
+   HERO SECTION*/
+        .hero-fire {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(120deg, var(--hero-bg-top), var(--hero-bg-bottom));
+            color: #fff;
+            padding: 70px 0;
+            position: relative;
+            overflow: hidden; /* Keep the overflow hidden */
+        }
+        
+        .hero-fire .container { position: relative; z-index: 2; }
+        .hero-fire .title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; color: white !important; }
+        .hero-fire .subtext { font-size: clamp(1rem, 2vw, 1.25rem); opacity: .9; color: rgba(255, 255, 255, 0.9) !important; }
+        
 
 .floating-book {
-  transform: rotate(-3deg);
-  transition: .5s ease;
+    max-width: 430px;
+    transform: rotate(-3deg);
+    transition: .4s ease;
 }
 .floating-book:hover { transform: rotate(0deg) scale(1.05); }
 
+/* Hero buttons */
+#heroButtons a, #mobileHeroButtons a {
+            padding: 10px 22px;
+            font-size: 1rem;
+            width: auto;
+            display: inline-block;
+        }
 
-/* Floating Pill */
-.sales-pill {
-  /* Use fixed color white for contrast against dark hero bg */
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(6px);
-  padding: 8px 18px;
-  border-radius: 50px;
-  font-size: .9rem;
-  font-weight: 600;
-  display: inline-flex;
-  gap: 6px;
-  align-items: center;
-}
+/* Hero bottom fade */
+.hero-fire::after {
+            content:"";
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--bg-page) 90%); 
+            pointer-events: none;
+            transition: background 0.5s ease;
+        }
 
-
-/* Dark mode Toggle */
-.theme-btn {
-  position: fixed; 
-  right: 18px; 
-  top: 18px;
-  z-index: 2000;
-  width: 46px; 
-  height: 46px;
-  border-radius: 50%;
-  /* Custom styling for the button using variables */
-  background-color: var(--bg-page);
-  color: var(--text-main);
-  border: 2px solid var(--text-muted);
-  transition: background-color 0.5s, color 0.5s, border-color 0.5s;
-}
-.theme-btn:hover {
-    background-color: var(--color-primary);
-    color: white;
-    border-color: var(--color-primary);
-}
-
-
-/* Bouncing circles (Use dynamic colors) */
 .circle-anim {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
+  position:absolute;
+  width:200px;
+  height:200px;
+  border-radius:50%;
   animation: floatBubble 6s infinite ease-in-out;
-  opacity: 0.18;
+  opacity:0.18;
+  z-index:0;
 }
 
-.circle-anim:nth-child(1) { background-color: var(--hero-circle-1); top: 10%; left: -60px; }
-.circle-anim:nth-child(2) { background-color: var(--hero-circle-2); bottom: 15%; right: -60px; animation-delay: 1s; }
-.circle-anim:nth-child(3) { background-color: var(--hero-circle-3); top: 60%; left: 40%; animation-delay: 2s; }
-
+.circle-anim:nth-child(1) { background-color: var(--hero-circle-1); top:10%; left:-60px; }
+.circle-anim:nth-child(2) { background-color: var(--hero-circle-2); bottom:15%; right:-60px; animation-delay:1s; }
+.circle-anim:nth-child(3) { background-color: var(--hero-circle-3); top:60%; left:40%; animation-delay:2s; }
 
 @keyframes floatBubble {
   0% { transform: translateY(0); }
@@ -139,62 +117,305 @@ footer.bg-primary {
   100% { transform: translateY(0); }
 }
 
-/* FIX 2: Pill stuck to book (Adjusted position) */
-.book-pill {
-  position: absolute;
-  bottom: 20px; /* Moved up from -20px */
-  right: 20px; /* Moved in from -10px */
-  background: rgba(255,255,255,0.2);
-  backdrop-filter: blur(8px);
-  padding: 10px 20px;
-  border-radius: 50px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  border: 1px solid rgba(255,255,255,0.4);
+/* Floating sales pill on hero */
+.sales-pill {
+            position: absolute; /* Default to absolute for desktop positioning over book */
+            bottom: 20px; 
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(6px);
+            padding: 10px 20px; /* Adjusted padding */
+            border-radius: 50px; 
+            color: white; 
+            z-index: 3; 
+            border: 1px solid rgba(255,255,255,.3);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+            animation: heroPillPulse 3s ease-in-out infinite; /* REVERTED */
+            white-space: nowrap;
+        }
+        
+        /* REVERTED KEYFRAMES for fuller pulse */
+        @keyframes heroPillPulse { 
+            0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.55); }
+            50% { box-shadow: 0 0 15px 6px rgba(255,255,255,0); }
+            100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.55); }
+        }
+
+/* Soft float animation for hero book */
+.floating-book {
+  animation: heroFloat 4.5s ease-in-out infinite;
+}
+@keyframes heroFloat {
+  0%   { transform: translateY(0) rotate(-3deg); }
+  50%  { transform: translateY(-8px) rotate(-3deg); }
+  100% { transform: translateY(0) rotate(-3deg); }
 }
 
-@media (max-width: 768px) {
-  .book-pill {
-    /* Center pill correctly on mobile beneath the book */
+.hero-fire .title,
+.hero-fire h1 {
+  color: #fff !important;
+  font-weight: 800 !important;
+}
+
+
+ /* === HERO SECTION ALIGNMENT FIXES (Focus of this turn) === */
+
+        /* 1. Universal Left-Alignment for Text Column (Desktop & Mobile) */
+        .hero-fire .col-lg-6.order-1 {
+            /* Force left alignment on the main column container */
+            text-align: left !important; 
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start !important;
+        }
+
+        /* Remove any conflicting centering classes from child elements */
+        .hero-fire .col-lg-6.order-1 > div {
+             text-align: left !important;
+             width: 100%;
+        }
+        
+        /* 2. Right Column (Book/Pill/Buttons) Alignment & PULL UP FIX */
+        .hero-fire .col-lg-6.order-2 {
+            text-align: center !important; 
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers the block elements (book/pill) */
+            margin-top: -50px; /* PULLS BOOK/PILL UP SLIGHTLY on desktop */
+        }
+
+        /* Pill Alignment Refinement: Ensure it stays centered under the book on mobile, and centered relative to the book container on desktop. */
+        .sales-pill {
+            /* Desktop/Mobile Base: centered relative to its parent container */
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        @media (max-width: 991.98px) {
+            
+            /* Resetting desktop margin for mobile */
+            .hero-fire .col-lg-6.order-2 {
+                margin-top: 0 !important;
+            }
+
+            /* Overrides to ensure mobile stacking order works with text aligned left */
+            .hero-fire .col-lg-6.order-1 {
+                text-align: left !important;
+                align-items: flex-start !important;
+            }
+
+            /* Pill: Switch to relative flow below the book, centered within the flex column */
+            .sales-pill {
+                position: relative !important;
+                transform: none !important; /* Removes translateX(-50%) */
+                left: auto !important;
+                bottom: auto !important;
+                margin-top: 20px; /* Space between book and pill */
+            }
+
+            /* Buttons: Ensure buttons are full width on mobile and stacked */
+            #mobileHeroButtons {
+                width: 100%;
+                margin-top: 18px;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+            #mobileHeroButtons a {
+                width: 100%;
+            }
+        }
+
+/* ==============================
+   ABOUT SECTION
+============================== */
+#about {
     position: relative;
-    right: auto;
-    bottom: auto;
-    margin-top: 15px;
-  }
+}
+.about-image-wrap {
+    position: relative;
+    display: inline-block;
+    width:100%;
+    max-width:420px;
+    margin:0 auto;
 }
 
-/* Mobile: stack in correct order — book first, text last */
-@media (max-width: 991.98px) {
-
-  /* Normal vertical stacking */
-  .hero-fire .row {
-    flex-direction: column !important;
-  }
-
-  /* Left text first */
-  .hero-fire .col-lg-6:first-child {
-    order: 1;
-  }
-
-  /* Book second */
-  .hero-fire .col-lg-6:last-child {
-    order: 2;
-  }
-
-  /* Buttons last */
-  .hero-fire .col-lg-6:first-child .d-flex {
-    order: 3;
-    margin-top: 20px;
-  }
+.about-image-wrap img {
+  animation: none !important;
+  transform: none !important;
 }
 
-/* Small screens book sizing */
-@media (max-width: 575.98px) {
-  .floating-book {
-    max-width: 200px;
-    margin: 0 auto;
-  }
+.about-book-img {
+    width:100%;
+    max-height:420px;
+    object-fit:cover;
+    border-radius:12px;
+    display:block;
+    margin:auto;
 }
+
+.about-badge {
+    position:absolute;
+    display:inline-flex;
+    gap:8px;
+    align-items:center;
+    padding:8px 12px;
+    border-radius:999px;
+    font-size:.82rem;
+    font-weight:600;
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(10px);
+    border:1px solid rgba(255,255,255,0.4);
+    color:var(--text-main);
+    animation: badgeFloat 5s ease-in-out infinite;
+    white-space:nowrap;
+}
+
+/* Desktop pill positions */
+.top-badge { top:14px; left:14px; }
+.mid-badge { right:14px; top:50%; transform:translateY(-50%); }
+.bottom-badge { right:14px; bottom:14px; }
+
+@keyframes badgeFloat {
+    0% { transform:translateY(0); opacity:.85; }
+    50% { transform:translateY(-6px); opacity:1; }
+    100% { transform:translateY(0); opacity:.85; }
+}
+
+/* ==============================
+   MOBILE RULES
+============================== */
+@media(max-width: 768px) {
+
+  /* Stack centered */
+  .about-image-wrap {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+  }
+
+  /* Pills become inline items below image */
+  .about-badge {
+    position:relative !important;
+    transform:none !important;
+    margin:4px !important;
+    animation:none !important;
+  }
+
+  .about-pills-group {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
+  }
+
+  /* CTA last */
+  .about-cta,
+  .about-section .btn,
+  #heroButtons {
+    order:99;
+    width:100%;
+    text-align:center;
+  }
+
+  #heroButtons a { width:100%; }
+}
+
+/* ==============================
+   THEME BUTTON
+============================== */
+.theme-btn {
+  position:fixed;
+  right:18px;
+  top:18px;
+  z-index:2000;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:var(--bg-page);
+  color:var(--text-main);
+  border:2px solid var(--text-muted);
+  transition:.4s;
+}
+.theme-btn:hover {
+  background:var(--color-primary);
+  color:#fff;
+  border-color:var(--color-primary);
+}
+
+.about-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Container should stay above the orbs */
+.about-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Orb Wrapper */
+.about-orbs {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Base Orb Style – visible blue circles */
+.about-orbs .orb {
+  position: absolute;
+  background: #0d6efd; /* bootstrap blue */
+  border-radius: 50%;
+  opacity: 0.25;      /* visible but not distracting */
+}
+
+/* ORB 1 — constant hop on text side */
+.orb-hop {
+  width: 55px;
+  height: 55px;
+  left: 8%;
+  top: 42%;
+  animation: orbHop 1.6s ease-in-out infinite;
+}
+
+/* ORB 2 — slow floating left side */
+.orb-float-1 {
+  width: 85px;
+  height: 85px;
+  left: -40px;
+  top: 15%;
+  animation: orbFloat1 10s ease-in-out infinite;
+}
+
+/* ORB 3 — slow floating around the book */
+.orb-float-2 {
+  width: 70px;
+  height: 70px;
+  right: -30px;
+  top: 55%;
+  animation: orbFloat2 12s ease-in-out infinite;
+}
+
+/* HOP animation — stays in place */
+@keyframes orbHop {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-22px); }
+  100% { transform: translateY(0); }
+}
+
+/* FLOAT animations — slow drifting */
+@keyframes orbFloat1 {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(40px, 25px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes orbFloat2 {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-35px, -30px); }
+  100% { transform: translate(0, 0); }
+}
+

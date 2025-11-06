@@ -13,119 +13,171 @@
 </head>
 <link rel="stylesheet" href="style.css">
 <body>
+  
 
-<button id="themeToggle" class="btn btn-dark theme-btn"><i class="bi bi-moon"></i></button>
+<button id="themeToggle" class="btn btn-dark theme-btn">
+  <i class="bi bi-moon"></i>
+</button>
+
 <section class="hero-fire position-relative overflow-hidden">
-<!-- subtle animated circles -->
-<div class="circle-anim bg-primary-subtle"></div>
-<div class="circle-anim bg-info-subtle delay-1"></div>
-<div class="circle-anim bg-light delay-2"></div>
+  <!-- subtle animated circles -->
+  <div class="circle-anim bg-primary-subtle"></div>
+  <div class="circle-anim bg-info-subtle delay-1"></div>
+  <div class="circle-anim bg-light delay-2"></div>
+
+  <div class="container position-relative">
+    <div class="row align-items-center">
+       <!-- Left Column: Content (Text/Logo/Desktop Buttons) -->
+                <div class="col-lg-6 mb-4 mb-lg-0 order-1 order-lg-1" data-aos="fade-right">
+                    
+                    <div class="text-center text-lg-start">
+                        <img src="img/Logosphere logo.png" style="width:70px" class="mb-3">
+                        <h1 class="title mb-2">
+                            Logosphere…<br>My Notes to Humanity
+                        </h1>
+                        <p class="subtext mb-4" style="opacity:.85;font-size:1.05rem;">
+                            — <em>Michael Uzoma Okoro</em>
+                        </p>
+                        
+                        <!-- Desktop Buttons (Visible on desktop only) -->
+                        <div id="heroButtons" class="d-none d-lg-flex gap-3 mb-3 flex-wrap justify-content-start">
+                            <a href="#buy" class="btn btn-lg btn-light px-4 fw-bold">Buy Now</a>
+                            <a href="#read" class="btn btn-lg btn-outline-light px-4 fw-bold">Read Free Sample</a>
+                        </div>
+                    </div>
+
+                </div>
 
 
-<div class="container position-relative">
-<div class="row align-items-center">
+                <!-- Right Column: Book/Pill/Mobile Buttons -->
+                <div class="col-lg-6 text-center position-relative mt-4 mt-lg-0 order-2 order-lg-2 d-flex flex-column align-items-center" data-aos="zoom-in">
+                    
+                    <!-- Book (Order 1 in mobile stack) -->
+                    <div class="position-relative d-inline-block order-1">
+                        <img src="Img/book-image.webp" class="img-fluid floating-book" style="max-height:480px;">
+                    </div>
+                    
+                    <!-- Pill (Order 2 in mobile stack) -->
+                    <div class="sales-pill animate__animated animate__fadeInUp animate__delay-1s order-2">
+                        <i class="bi bi-people-fill"></i> 200+ copies sold
+                    </div>
 
+                    <!-- Mobile Buttons (Order 3 in mobile stack) -->
+                    <div id="mobileHeroButtons" class="d-flex d-lg-none gap-3 mb-3 flex-wrap justify-content-center mt-4 order-3">
+                        <a href="#buy" class="btn btn-lg btn-light px-4 fw-bold">Buy Now</a>
+                        <a href="#read" class="btn btn-lg btn-outline-light px-4 fw-bold">Read Free Sample</a>
+                    </div>
 
-<!-- Left -->
-<div class="col-lg-6 mb-4 mb-lg-0 text-left text-lg-start" data-aos="fade-right">
-<img src="Img/Logosphere logo.png" style="width:70px" class="mb-3">
-<h1 class="title mb-3">Awaken The Logos.<br>Reimagine Humanity.</h1>
-<p class="subtext mb-4">A transformational journey into truth, order, and the rebirth of civilization — rooted in divine logic and eternal wisdom.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-
-<div class="d-flex gap-3 mb-3 flex-wrap justify-content-center justify-content-lg-start">
-<a href="#buy" class="btn btn-lg btn-light px-4 fw-bold">Buy Now</a>
-<a href="#read" class="btn btn-lg btn-outline-light px-4 fw-bold">Read Free Sample</a>
-</div>
-</div>
-
-
-<!-- Right -->
-<div class="col-lg-6 text-center position-relative mt-4 mt-lg-0" data-aos="zoom-in">
-<div class="position-relative d-inline-block">
-<img src="Img/book-image.webp" class="img-fluid floating-book" style="max-height:480px;">
-<!-- pill stuck to book -->
-<div class="sales-pill book-pill animate__animated animate__fadeInUp animate__delay-1s">
-<i class="bi bi-people-fill"></i> 200+ copies sold
-</div>
-</div>
-</div>
-
-
-</div>
-</div>
-</section>
 
 <!-- ABOUT SECTION -->
-<section class="py-5" style="background-color: #f0f6ff;">
+<section id="about" class="about-section py-5" style="background-color: #f0f6ff;">
+
+  <!-- ORBS -->
+  <div class="about-orbs">
+    <span class="orb orb-hop"></span>
+    <span class="orb orb-float-1"></span>
+    <span class="orb orb-float-2"></span>
+  </div>
+
   <div class="container">
     <div class="row align-items-center justify-content-center g-5">
-      
-      <div class="col-md-6 text-center text-md-start order-1 order-md-1" data-aos="fade-left">
-        <h1 class="text-secondary mb-3 display-5 fw-bold">About the Book</h1>
-        
-        <div class="d-inline-flex align-items-center gap-2 mb-4 p-2 bg-light rounded-pill border">
-            <img src="Img/Young.png" alt="Young People Genre" style="max-width: 25px;">
-            <p class="mb-0 fw-bold text-uppercase small text-primary">Self-Help / Philosophy</p>
+
+      <!-- TEXT -->
+      <div class="col-md-6 order-1 order-md-1" data-aos="fade-up">
+        <h2 class="mb-3 fw-bold text-secondary display-6">About the Book</h2>
+
+        <div class="d-inline-flex align-items-center gap-2 mb-4 p-2 bg-white rounded-pill border small shadow-sm">
+          <img src="Img/Young.png" style="max-width: 26px;" alt="">
+          <span class="fw-semibold text-primary text-uppercase">Self-Help / Philosophy</span>
         </div>
-        
-        <p class="text-dark lead mb-4">
-          Look around the world objectively; look. Whether you live in affluence or squalor, look. Whoever you are, or whatever position you find yourself in, just look. As you will see, the wind of change is blowing and it is touching everyone. Humanity suffers a great decline, from climate change to political instability, and war and conflict between nations. A great number of people are confused, worried, and in despair...
+
+        <p class="text-dark lh-lg mb-3">
+          Look around the world objectively; look. Whether you live in affluence or squalor, look...
         </p>
-        <p class="text-dark mb-4">
-          There has hardly been a time in humanity's history when the future of humanity holds great concern such as it holds now. Indeed a greater wisdom and intelligence must now be brought to bear in moving towards the future. Not a wisdom or intelligence that is born of the intellect or of our rational mind, but rather a higher wisdom and intelligence that is born out of or is rather the very source of our existence. This higher wisdom and intelligence in this book is called the Logos. It is this intelligence called the Logos that this book seeks to introduce to its reader and heralds this intelligence to be the redemption to a declining world.
+
+        <p class="text-dark lh-lg mb-4">
+          A greater wisdom and intelligence must now be brought to bear in moving towards the future...
         </p>
-        
-        <h3 class="fw-bold mt-4 mb-3 text-secondary">What You'll Discover:</h3>
-        
-        <ul class="list-group list-group-flush text-dark mb-4">
-          <li class="list-group-item d-flex align-items-center px-0 py-1 border-0 bg-transparent"><i class="bi bi-check-circle-fill text-primary me-2"></i>Purpose and Meaning</li>
-          <li class="list-group-item d-flex align-items-center px-0 py-1 border-0 bg-transparent"><i class="bi bi-check-circle-fill text-primary me-2"></i>A New Awareness and Perspective</li>
-          <li class="list-group-item d-flex align-items-center px-0 py-1 border-0 bg-transparent"><i class="bi bi-check-circle-fill text-primary me-2"></i>An urge to Serve and Contribute something valuable to the world</li>
+
+        <h4 class="fw-bold text-secondary mb-3">What You'll Discover</h4>
+
+        <ul class="list-unstyled ms-1 mb-4">
+          <li class="d-flex align-items-center mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Purpose & Meaning</li>
+          <li class="d-flex align-items-center mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> A New Awareness & Perspective</li>
+          <li class="d-flex align-items-center"><i class="bi bi-check-circle-fill text-primary me-2"></i> A renewed urge to serve & contribute</li>
         </ul>
-        
-        <a href="https://www.amazon.com/LOGOSPHERE-notes-humanity-new-paradigm-ebook/dp/B0CLL1SLJP" class="btn btn-primary btn-lg mt-3 px-5 py-3 rounded-pill shadow-lg animate__animated animate__fadeInUp">
+      </div>
+
+      <!-- BOOK -->
+      <div class="col-md-5 text-center order-2 order-md-2" data-aos="fade-up">
+
+        <div class="about-image-wrap position-relative d-inline-block">
+
+          <img src="Img/Book cover 2.jpg" class="about-book-img img-fluid floating-book shadow-lg" alt="Logosphere Book">
+
+          <!-- Desktop Pills -->
+          <div class="about-badge top-badge d-none d-md-inline-flex">
+            <img src="Img/Pages.png" style="width:16px;height:16px;">
+            <span>326 Pages</span>
+          </div>
+
+          <div class="about-badge mid-badge d-none d-md-inline-flex">
+            <img src="Img/Language.png" style="width:16px;height:16px;">
+            <span>English</span>
+          </div>
+
+          <div class="about-badge bottom-badge d-none d-md-inline-flex">
+            <img src="Img/Calendar.png" style="width:16px;height:16px;">
+            <span>Nov 7, 2023</span>
+          </div>
+
+        </div>
+
+        <!-- Mobile Pills -->
+        <div class="about-pills-group d-md-none mt-3">
+          <div class="about-badge">
+            <img src="Img/Pages.png" style="width:16px;height:16px;">
+            <span>326 Pages</span>
+          </div>
+
+          <div class="about-badge">
+            <img src="Img/Language.png" style="width:16px;height:16px;">
+            <span>English</span>
+          </div>
+
+          <div class="about-badge">
+            <img src="Img/Calendar.png" style="width:16px;height:16px;">
+            <span>Nov 7, 2023</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BUTTON -->
+      <div class="col-12 order-3 text-center about-cta mt-3">
+        <a href="https://www.amazon.com/LOGOSPHERE-notes-humanity-new-paradigm-ebook/dp/B0CLL1SLJP"
+           class="btn btn-primary btn-lg px-5 py-3 rounded-pill shadow-sm fw-semibold w-md-auto w-100"
+           style="letter-spacing:0.5px;">
           Get the Book Now <i class="bi bi-book ms-2"></i>
         </a>
       </div>
 
-      <div class="col-md-5 mb-4 mb-md-0 text-center order-2 order-md-2" data-aos="fade-up">
-        
-        <img src="Img/Book cover 2.jpg" alt="Book Cover" class="img-fluid shadow-lg mb-4" style="max-height: 500px; border-radius: 12px; object-fit: contain;">
-        
-        <div class="bg-white rounded-4 shadow-lg p-4 d-flex flex-wrap justify-content-around align-items-center gap-3 border border-light">
-          
-          <div class="text-center">
-            <img src="Img/Pages.png" alt="Pages Icon" style="max-width: 40px;" class="mb-1">
-            <p class="mb-0 fw-bold text-primary small">Pages</p>
-            <p class="mb-0 text-dark fw-semibold">326</p>
-          </div>
-          
-          <div class="text-center border-start border-end px-3">
-            <img src="Img/Language.png" alt="Language Icon" style="max-width: 40px;" class="mb-1">
-            <p class="mb-0 fw-bold text-primary small">Language</p>
-            <p class="mb-0 text-dark fw-semibold">English</p>
-          </div>
-          
-          <div class="text-center">
-            <img src="Img/Calendar.png" alt="Published Icon" style="max-width: 40px;" class="mb-1">
-            <p class="mb-0 fw-bold text-primary small">Published</p>
-            <p class="mb-0 text-dark fw-semibold">Nov 7, 2023</p>
-          </div>
-          
-        </div>
-      </div>
     </div>
   </div>
 </section>
 
 <!-- WHY SPECIAL SECTION (REIMAGINED) -->
-<section class="py-5 py-lg-6" style="background-color: #f0f6ff;">
+<section class="py-5 py-lg-6" style="background-color: #ffffff;">
 
   <div class="container" data-aos="fade-up">
     
     <!-- SECTION HEADER -->
-    <section class="py-5 py-lg-6" style="background-color: #f0f6ff;">
+    <section class="py-5 py-lg-6" style="background-color: #ffffff;">
 
   <div class="container" data-aos="fade-up">
     
@@ -680,15 +732,11 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>AOS.init();</script>
 <script>
-const htmlEl = document.documentElement;
-const btn = document.getElementById("themeToggle");
-btn.addEventListener("click", () => {
-htmlEl.dataset.theme = htmlEl.dataset.theme === "dark" ? "light" : "dark";
-btn.innerHTML = htmlEl.dataset.theme === "dark"
-? `<i class='bi bi-sun'></i>`
-: `<i class='bi bi-moon'></i>`;
+AOS.init({
+  duration: 900,
+  easing: "ease-out-cubic",
+  once: true,
 });
 </script>
 

@@ -64,7 +64,7 @@
                     <div class="text-center text-lg-start">
                         <img src="Img/Logosphere logo.png" style="width:70px" class="mb-3">
                         <h1 class="title mb-2">
-                            LOGOSPHERE<br><h3 style="color: #ffffff;">My Notes to Humanity For A New Paradigm</h3>
+                            Logosphere…<br><h3 style="color: #ffffff;">My Notes to Humanity For A New Paradigm</h3>
                         </h1>
                         <p class="subtext mb-4" style="opacity:.85;font-size:1.05rem;">
                             — <em>Michael Uzoma Okoro</em>
@@ -72,7 +72,7 @@
                         
                         <!-- Desktop Buttons (Visible on desktop only) -->
                         <div id="heroButtons" class="d-none d-lg-flex gap-3 mb-3 flex-wrap justify-content-start">
-                            <a href="#buy" class="btn btn-lg btn-light px-4 fw-bold">Buy Now</a>
+                            <a href="https://www.amazon.com/LOGOSPHERE-notes-humanity-new-paradigm-ebook/dp/B0CLL1SLJP" class="btn btn-lg btn-light px-4 fw-bold">Buy Now</a>
                             <a href="#read-excerpt" class="btn btn-lg btn-outline-light px-4 fw-bold">Read Free Sample</a>
                         </div>
                     </div>
@@ -481,7 +481,7 @@
               <li><i class="bi bi-check-circle-fill text-success me-2"></i> Premium hardcover binding</li>
               <li><i class="bi bi-check-circle-fill text-success me-2"></i> Full-color pages</li>
               <li><i class="bi bi-check-circle-fill text-success me-2"></i> Includes dust jacket</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 384 beautifully printed pages</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 297 beautifully printed pages</li>
             </ul>
             <a href="https://www.amazon.com/LOGOSPHERE-notes-humanity-new-paradigm-ebook/dp/B0CLL1SLJP" class="btn btn-primary rounded-pill w-100 mb-2 btn-float">Buy Hardcover</a>
             <div class="d-flex justify-content-center gap-3 fs-5">
@@ -881,12 +881,13 @@ function prevTestimonial() {
   showTestimonial(tIndex);
 }
 
-document.getElementById('nextBtn').addEventListener('click', nextTestimonial);
-document.getElementById('prevBtn').addEventListener('click', prevTestimonial);
+document.getElementById('nextBtn')?.addEventListener('click', nextTestimonial);
+document.getElementById('prevBtn')?.addEventListener('click', prevTestimonial);
 
 /* Auto-slide every 6 seconds */
-setInterval(nextTestimonial, 6000);
-
+if (tSlides.length > 1) {
+    setInterval(nextTestimonial, 6000);
+}
 </script>
 </body>
 </html>

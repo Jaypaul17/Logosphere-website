@@ -43,24 +43,30 @@ h1, h2, h3, h4, h5, h6, strong { color: var(--text-main); }
 .shadow-lg { box-shadow: 0 1rem 3rem var(--shadow-color) !important; }
 
 /* ==============================
-   NAVBAR STYLES (NEW)
+   NAVBAR STYLES (NEW - Transparent & Frosted)
 ============================== */
 .navbar-blur {
-    /* Glass Effect */
-    background-color: rgba(10, 37, 64, 0.8) !important; 
+    /* 1. Transparent Background, relies on blur for visibility */
+    background-color: rgba(10, 37, 64, 0.1) !important; 
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2); /* Slightly stronger shadow for contrast */
     transition: background-color 0.3s ease;
-    z-index: 1030; /* Ensures it sits above everything else */
+    z-index: 1030; 
 }
 .navbar-blur .nav-link:hover {
     color: var(--color-primary) !important;
 }
 .navbar-blur .nav-link.active {
+    /* 2. Ensured high visibility for active links */
     color: white !important;
     border-bottom: 2px solid white;
     padding-bottom: 6px;
+}
+.navbar-blur .navbar-brand,
+.navbar-blur .nav-link {
+    /* 2. Ensured high visibility for all text */
+    color: white !important;
 }
 
 /* ==============================
@@ -578,32 +584,22 @@ h1, h2, h3, h4, h5, h6, strong { color: var(--text-main); }
 .hero-footer-style::before {
     content: "";
     position: absolute;
-    top: -100px; /* Starts the fade-in well above the section */
+    top: -120px; 
     left: 0;
     width: 100%;
-    height: 100px;
-    /* Transitions from the page background (white/light gray) to transparent */
-    background: linear-gradient(to top, rgba(248, 250, 255, 0) 0%, var(--bg-page) 100%); 
-    pointer-events: none;
-    z-index: 10;
-    /* Adjust this gradient stop for color match if needed */
-    background: linear-gradient(to bottom, transparent 0%, var(--bg-page) 100%);
-    
-    /* Reverse the transition for the footer to match the Hero's style */
-    background: linear-gradient(to top, rgba(0,0,0,0) 0%, var(--bg-page) 100%);
-    
+    height: 120px;
     /* Final adjustment for smooth blend */
     background: linear-gradient(to top, 
         rgba(248, 250, 255, 0) 0%, /* Transparent at the footer boundary */
         rgba(248, 250, 255, 1) 100% /* Solid page background color at the top */
     );
-    height: 120px;
-    top: -120px;
+    pointer-events: none;
+    z-index: 10;
 }
 
 /* Custom link styling to match the modern look */
 .footer-link {
-    color: #d1d5db;
+    color: #fff;
     text-decoration: none;
     transition: color 0.2s;
 }
@@ -633,4 +629,26 @@ h1, h2, h3, h4, h5, h6, strong { color: var(--text-main); }
         margin: 0 !important;
         width: 100% !important;
     }
+}
+
+/* Blog Post Card Styles (Mockup for IG posts) */
+.blog-card-img {
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+.blog-card-meta {
+    font-size: 0.8rem;
+    color: var(--color-primary);
+}
+.blog-card-link {
+    text-decoration: none;
+    color: var(--text-main);
+    transition: color 0.2s;
+}
+.blog-card-link:hover {
+    color: var(--color-primary);
+}
+.instagram-embed-target {
+    min-height: 600px;
 }

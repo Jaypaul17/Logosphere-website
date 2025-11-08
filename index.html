@@ -8,16 +8,50 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+<!-- ADDED: Font Awesome for social/contact icons (e.g., envelope, phone) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>  
 </head>
+<!-- CORRECTED PATH -->
 <link rel="stylesheet" href="style.css">
 <body>
-  
 
-<button id="themeToggle" class="btn btn-dark theme-btn">
-  <i class="bi bi-moon"></i>
-</button>
+<!-- === NAVBAR START: Sticky, Frosted Glass Effect === -->
+<nav class="navbar navbar-expand-lg fixed-top py-3 navbar-blur" data-bs-theme="dark">
+    <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center fw-bold" href="#top">
+            <!-- CORRECTED PATH -->
+            <img src="Img/Logosphere logo.png" style="width: 35px;" class="me-2 filter-white" alt="Logosphere Logo">
+            Logosphere
+        </a>
+        
+        <!-- Toggler for Mobile -->
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Navigation Links -->
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav gap-3">
+                <li class="nav-item">
+                    <a class="nav-link active fw-semibold text-white" aria-current="page" href="#top">Home</a>
+                </li>
+                <li class="nav-item">
+                    <!-- CORRECTED LINK -->
+                    <a class="nav-link fw-semibold text-white" href="blog.html">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold text-white" href="#contact-author">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- === NAVBAR END === -->
+<a name="top"></a>
+<main>
 
 <section class="hero-fire position-relative overflow-hidden">
   <!-- subtle animated circles -->
@@ -31,9 +65,10 @@
                 <div class="col-lg-6 mb-4 mb-lg-0 order-1 order-lg-1" data-aos="fade-right">
                     
                     <div class="text-center text-lg-start">
-                        <img src="img/Logosphere logo.png" style="width:70px" class="mb-3">
+                        <!-- CORRECTED PATH -->
+                        <img src="Img/Logosphere logo.png" style="width:70px" class="mb-3">
                         <h1 class="title mb-2">
-                            Logosphere…<br>My Notes to Humanity
+                            LOGOSPHERE<br>My Notes to Humanity
                         </h1>
                         <p class="subtext mb-4" style="opacity:.85;font-size:1.05rem;">
                             — <em>Michael Uzoma Okoro</em>
@@ -54,6 +89,7 @@
                     
                     <!-- Book (Order 1 in mobile stack) -->
                     <div class="position-relative d-inline-block order-1">
+                        <!-- CORRECTED PATH -->
                         <img src="Img/book-image.webp" class="img-fluid floating-book" style="max-height:480px;">
                     </div>
                     
@@ -76,7 +112,7 @@
 
 <!-- ABOUT SECTION -->
 <section id="about" class="about-section py-5" style="background-color: #f0f6ff;">
-
+<a name="about"></a>
   <!-- ORBS -->
   <div class="about-orbs">
     <span class="orb orb-hop"></span>
@@ -92,6 +128,7 @@
         <h2 class="mb-3 fw-bold text-secondary display-6">About the Book</h2>
 
         <div class="d-inline-flex align-items-center gap-2 mb-4 p-2 bg-white rounded-pill border small shadow-sm">
+            <!-- CORRECTED PATH -->
           <img src="Img/Young.png" style="max-width: 26px;" alt="">
           <span class="fw-semibold text-primary text-uppercase">Self-Help / Philosophy</span>
         </div>
@@ -118,20 +155,24 @@
 
         <div class="about-image-wrap position-relative d-inline-block">
 
+            <!-- CORRECTED PATH -->
           <img src="Img/Book cover 2.jpg" class="about-book-img img-fluid floating-book shadow-lg" alt="Logosphere Book">
 
           <!-- Desktop Pills -->
           <div class="about-badge top-badge d-none d-md-inline-flex">
+              <!-- CORRECTED PATH -->
             <img src="Img/Pages.png" style="width:16px;height:16px;">
             <span>326 Pages</span>
           </div>
 
           <div class="about-badge mid-badge d-none d-md-inline-flex">
+              <!-- CORRECTED PATH -->
             <img src="Img/Language.png" style="width:16px;height:16px;">
             <span>English</span>
           </div>
 
           <div class="about-badge bottom-badge d-none d-md-inline-flex">
+              <!-- CORRECTED PATH -->
             <img src="Img/Calendar.png" style="width:16px;height:16px;">
             <span>Nov 7, 2023</span>
           </div>
@@ -141,16 +182,19 @@
         <!-- Mobile Pills -->
         <div class="about-pills-group d-md-none mt-3">
           <div class="about-badge">
+              <!-- CORRECTED PATH -->
             <img src="Img/Pages.png" style="width:16px;height:16px;">
             <span>326 Pages</span>
           </div>
 
           <div class="about-badge">
+              <!-- CORRECTED PATH -->
             <img src="Img/Language.png" style="width:16px;height:16px;">
             <span>English</span>
           </div>
 
           <div class="about-badge">
+              <!-- CORRECTED PATH -->
             <img src="Img/Calendar.png" style="width:16px;height:16px;">
             <span>Nov 7, 2023</span>
           </div>
@@ -257,7 +301,7 @@
 
 
 <div class="author-wrapper" style="background-color: #f0f6ff; width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%);">
-
+<a name="author"></a>
   <section class="py-5 "> 
     <div class="container">
       
@@ -276,7 +320,9 @@
         <div class="col-12 col-lg-5 order-2 text-center" data-aos="fade-right" data-aos-duration="1000">
           
           <div class="mt-4 mt-lg-0">
+              <!-- CORRECTED PATH -->
             <img src="Img/Author.jpg" alt="Author photo" class="img-fluid rounded-4 shadow" style="max-width: 300px; display: block; margin: 0 auto; margin-bottom: 1.5rem;"> 
+              <!-- CORRECTED PATH -->
             <img src="Img/Signature.png" alt="Signature" style="max-width: 150px; display: block; margin: 0 auto;">
           </div>
 
@@ -299,6 +345,7 @@
 
 
 <section class="py-5 bg-light" id="read-excerpt">
+<a name="read-excerpt"></a>
   <div class="container">
     <div class="text-center mb-4" data-aos="fade-up">
       <h4 class="fw-bold text-uppercase text-primary">Step Into the Logosphere</h4>
@@ -365,9 +412,9 @@
 </section>
 
 <div class="testimonial-area">
+<a name="testimonial-area"></a>
   <section class="py-5">
     <div class="container">
-
       <div class="text-center mb-5" data-aos="fade-down">
         <h2 class="fw-bold">Voices from Our Readers</h2>
         <p class="text-muted fs-5">
@@ -426,7 +473,8 @@
 
 
 
-<section class="py-5 bg-light" style="background: linear-gradient(to bottom, #f8fbff, #eaf1f7);">
+<section class="py-5 full-bg-section">
+<a name="buy"></a>
   <div class="container">
     <div class="text-center mb-5" data-aos="fade-up">
       <h2 class="fw-bold text-dark">Order the Book in Your Favorite Format</h2>
@@ -443,7 +491,7 @@
               <i class="bi bi-book display-5 text-primary"></i>
             </div>
             <h3 class="h5 fw-bold text-dark">Hardcover Edition</h3>
-            <p class="text-primary fw-bold fs-4 mb-3">$9.99</p>
+            <p class="text-primary fw-bold fs-4 mb-3">$10</p>
             <ul class="list-unstyled text-start small mb-4 flex-grow-1">
               <li><i class="bi bi-check-circle-fill text-success me-2"></i> Premium hardcover binding</li>
               <li><i class="bi bi-check-circle-fill text-success me-2"></i> Full-color pages</li>
@@ -467,7 +515,7 @@
               <i class="bi bi-journal-text display-5 text-primary"></i>
             </div>
             <h3 class="h5 fw-bold text-dark">Paperback Edition</h3>
-            <p class="text-primary fw-bold fs-4 mb-3">$16.99</p>
+            <p class="text-primary fw-bold fs-4 mb-3">$7</p>
             <ul class="list-unstyled text-start small mb-4 flex-grow-1">
               <li><i class="bi bi-check-circle-fill text-success me-2"></i> Lightweight & travel-friendly</li>
               <li><i class="bi bi-check-circle-fill text-success me-2"></i> Smooth matte finish</li>
@@ -493,7 +541,7 @@
               <i class="bi bi-tablet display-5 text-primary"></i>
             </div>
             <h3 class="h5 fw-bold text-dark">Digital eBook</h3>
-            <p class="text-primary fw-bold fs-4 mb-3">$9.99</p>
+            <p class="text-primary fw-bold fs-4 mb-3">$4</p>
             <ul class="list-unstyled text-start small mb-4 flex-grow-1">
               <li><i class="bi bi-check-circle-fill text-success me-2"></i> Instant download</li>
               <li><i class="bi bi-check-circle-fill text-success me-2"></i> Works on Kindle, iPad & more</li>
@@ -512,6 +560,7 @@
 
       <!-- Audiobook -->
       <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+          <a name="audiobook"></a>
         <article class="card h-100 border-0 shadow-sm rounded-4 text-center">
           <div class="card-body d-flex flex-column p-4">
             <div class="mb-3">
@@ -520,10 +569,10 @@
             <h3 class="h5 fw-bold text-dark">Audiobook Version</h3>
             <p class="text-primary fw-bold fs-4 mb-3">$19.99</p>
             <ul class="list-unstyled text-start small mb-4 flex-grow-1">
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Narrated by professionals</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Runtime: 10h 23m</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Narrated by Michael Uzoma</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Available on spotify</li>
               <li><i class="bi bi-check-circle-fill text-success me-2"></i> Offline or streaming</li>
-              <li><i class="bi bi-check-circle-fill text-success me-2"></i> High-quality stereo sound</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Only first five chapters are free</li>
             </ul>
             <a href="#buy-audiobook" class="btn btn-primary rounded-pill w-100 mb-2 btn-float">Buy Audiobook</a>
             <p class="small text-muted">Listen on:</p>
@@ -541,7 +590,9 @@
 </section>
 
 
-<section class="py-5" style="background-color: #ffffff;"> <div class="container">
+<section class="py-5" style="background-color: #ffffff;"> 
+<a name="faqAccordion"></a>
+    <div class="container">
         <div class="row align-items-center justify-content-between g-5">
             <!-- FAQ Left Column -->
             <!-- Added responsive text alignment for the FAQ text -->
@@ -628,116 +679,212 @@
     </div>
 </section>
 
-<section class="py-5 bg-light" id="contact-author">
-  <div class="container">
-    <header class="text-center mb-5" data-aos="fade-up">
-      <h2 class="fw-bold text-dark">Contact the Author</h2>
-      <p class="lead text-muted">
-        Have questions about the book, speaking events, or interviews? Reach out below.
-      </p>
-    </header>
+<div style="background-color: #ffffff; width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%);">
+<a name="contact-author"></a>
+  <section id="contact-author" class="py-5 contact-section">
+    <div class="container">
 
-    <div class="row justify-content-center g-4">
-      <!-- Contact Information -->
-      <!-- Added responsive text alignment for contact info -->
-      <article class="col-lg-5 col-md-6 text-center text-md-start" data-aos="fade-right">
-        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
-          <div class="card-body">
-            <h3 class="h5 fw-bold text-dark mb-4">Get In Touch</h3>
+      <header class="text-center mb-5" data-aos="fade-up">
+        <h2 class="fw-bold text-dark">Get In Touch With the Author</h2>
+        <p class="lead text-muted">
+          For inquiries, collaborations, speaking engagements, or general questions — feel free to reach out.
+        </p>
+      </header>
+
+      <div class="row justify-content-center g-4">
+
+        <article class="col-lg-5 col-md-6" data-aos="fade-right">
+          <div class="p-4 h-100 shadow-lg border-0 rounded-4" style="background-color: #f8faff;">
+            <h3 class="h5 fw-bold text-dark mb-4">Contact Information</h3>
             <p class="text-muted mb-4">
-              Contact the author directly for collaboration, press inquiries, or reader feedback.
+              Reach out directly using any of the details below.
             </p>
 
             <ul class="list-unstyled">
-              <li class="d-flex align-items-start mb-3 justify-content-center justify-content-md-start">
-                <i class="bi bi-envelope-fill text-primary fs-5 me-3"></i>
+              <li class="d-flex align-items-start mb-4">
+                <span class="contact-icon-circle me-3">
+                  <i class="bi bi-envelope-fill"></i>
+                </span>
                 <div>
                   <strong class="text-dark">Email</strong><br>
-                  <a href="mailto:author@example.com" class="text-muted">Logosphereinstitute@gmail.com</a>
+                  <a href="mailto:Logosphereinstitute@gmail.com" class="text-muted">Logosphereinstitute@gmail.com</a>
                 </div>
               </li>
-              <li class="d-flex align-items-start mb-3 justify-content-center justify-content-md-start">
-                <i class="bi bi-phone-fill text-primary fs-5 me-3"></i>
+
+              <li class="d-flex align-items-start mb-4">
+                <span class="contact-icon-circle me-3">
+                  <i class="bi bi-phone-fill"></i>
+                </span>
                 <div>
                   <strong class="text-dark">Phone</strong><br>
-                  <a href="tel:+15551234567" class="text-muted">+2349026615380, +2348071443166</a>
+                  <a href="tel:+2349026615380" class="text-muted">+2349026615380, +2348071443166</a>
                 </div>
               </li>
-              <li class="d-flex align-items-start mb-3 justify-content-center justify-content-md-start">
-                <i class="bi bi-geo-alt-fill text-primary fs-5 me-3"></i>
+
+              <li class="d-flex align-items-start mb-4">
+                <span class="contact-icon-circle me-3">
+                  <i class="bi bi-geo-alt-fill"></i>
+                </span>
                 <div>
                   <strong class="text-dark">Address</strong><br>
-                  <address class="text-muted mb-0">
-                    De Santos Estate, Lagos
-                  </address>
+                  <address class="text-muted mb-0">De Santos Estate, Lagos</address>
                 </div>
               </li>
             </ul>
 
-            <div class="mt-4">
-              <h4 class="h6 fw-bold text-dark">Follow Online</h4>
-              <!-- Added responsive justify-content for social icons -->
-              <div class="d-flex gap-3 mt-2 justify-content-center justify-content-md-start">
-                <a href="https://twitter.com/yourprofile" class="text-dark" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
-                <a href="https://facebook.com/yourprofile" class="text-dark" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                <a href="https://instagram.com/yourprofile" class="text-dark" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                <a href="https://linkedin.com/in/yourprofile" class="text-dark" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-              </div>
+            <h4 class="h6 fw-bold text-dark mt-4">Follow Online</h4>
+            <div class="d-flex gap-3 mt-3">
+              <a href="#" class="text-primary fs-5"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="text-primary fs-5"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="text-primary fs-5"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="text-primary fs-5"><i class="bi bi-linkedin"></i></a>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <!-- Contact Form -->
-      <article class="col-lg-7 col-md-6" data-aos="fade-left" data-aos-delay="100">
-        <div class="card h-100 shadow-sm border-0 rounded-4 p-4">
-          <div class="card-body">
+        <article class="col-lg-7 col-md-6" data-aos="fade-left">
+          <div class="p-4 h-100 shadow-lg border-0 rounded-4" style="background-color: #f8faff;">
+            <h3 class="h5 fw-bold text-dark mb-4">Send a Message</h3>
+
             <form action="#" method="POST" aria-label="Contact Form">
               <div class="row g-3 mb-3">
                 <div class="col-md-6">
-                  <label for="name" class="form-label visually-hidden">Your Name</label>
-                  <input type="text" id="name" name="name" class="form-control form-control-lg rounded-pill px-4 py-3" placeholder="Your Name" required>
+                  <input type="text" class="form-control form-control-lg rounded-pill px-4 py-3" placeholder="Your Name" required>
                 </div>
                 <div class="col-md-6">
-                  <label for="email" class="form-label visually-hidden">Your Email</label>
-                  <input type="email" id="email" name="email" class="form-control form-control-lg rounded-pill px-4 py-3" placeholder="Your Email" required>
+                  <input type="email" class="form-control form-control-lg rounded-pill px-4 py-3" placeholder="Your Email" required>
                 </div>
               </div>
 
               <div class="mb-3">
-                <label for="subject" class="form-label visually-hidden">Subject</label>
-                <input type="text" id="subject" name="subject" class="form-control form-control-lg rounded-pill px-4 py-3" placeholder="Subject" required>
+                <input type="text" class="form-control form-control-lg rounded-pill px-4 py-3" placeholder="Subject" required>
               </div>
 
               <div class="mb-4">
-                <label for="message" class="form-label visually-hidden">Message</label>
-                <textarea id="message" name="message" rows="6" class="form-control form-control-lg rounded-4 p-4" placeholder="Your message here..." required></textarea>
+                <textarea rows="6" class="form-control form-control-lg rounded-4 p-4" placeholder="Your Message..." required></textarea>
               </div>
 
               <div class="d-grid">
-                <button type="submit" class="btn btn-primary btn-lg rounded-pill px-5 py-3 fw-bold btn-float">
+                <button class="btn btn-primary btn-lg rounded-pill px-5 py-3 fw-bold btn-float">
                   Send Message
                 </button>
               </div>
             </form>
           </div>
         </article>
+
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
+</main>
 
-<footer class="bg-primary text-light py-4">
-  <div class="container text-center">
-    <p class="mb-2">© 2025 Logosphere Publishing. All rights reserved.</p>
-    <div class="d-flex justify-content-center gap-3">
-      <a href="#" class="text-light text-decoration-none">Privacy Policy</a>
-      <a href="#" class="text-light text-decoration-none">Terms of Use</a>
-      <a href="#" class="text-light text-decoration-none">Contact</a>
-    </div>
-  </div>
-</footer>
+<!-- FOOTER START - Mirroring Hero Section -->
+<div class="footer-fire-wrapper position-relative overflow-hidden">
+    <!-- subtle animated circles (Mirrored from hero) -->
+    <div class="circle-anim bg-primary-subtle"></div>
+    <div class="circle-anim bg-info-subtle delay-1"></div>
+    <div class="circle-anim bg-light delay-2"></div>
+    
+    <footer class="hero-footer-style text-white pt-5 pb-5 position-relative">
+        <!-- The ::before pseudo element in style.css handles the white gradient fade -->
+        <div class="container position-relative" style="z-index: 10;">
+            <div class="row g-4 pb-4">
 
+                <!-- 1. Brand / Institute (Takes 12 columns on mobile, 4 on large screens) -->
+                <div class="col-12 col-lg-4">
+                    <h3 class="h4 fw-bolder text-white mb-3">
+                        <!-- CORRECTED PATH -->
+                        <img src="Img/Logosphere logo.png" style="width:30px" class="me-2 filter-white">
+                        Logosphere Institute
+                    </h3>
+                    <p class="text-light small mb-4 opacity-75">
+                        Supporting humanity’s evolution and transition into a new paradigm. The core message of Logosphere... My Notes to Humanity.
+                    </p>
+                    
+                    <!-- Social Icons -->
+                    <div class="d-flex gap-4">
+                        <a href="https://web.facebook.com/michael.okoro.12327/about" class="social-icon-footer text-white">
+                            <i class="fab fa-facebook-f fs-5"></i>
+                        </a>
+                        <a href="https://x.com/MerchandizeMike" class="social-icon-footer text-white">
+                            <i class="fab fa-twitter fs-5"></i>
+                        </a>
+                        <a href="https://t.co/hTkzjxC7Qv" class="social-icon-footer text-white">
+                            <i class="fab fa-instagram fs-5"></i>
+                        </a>
+                        <a href="mailto:Logosphereinstitute@gmail.com" class="social-icon-footer text-white">
+                            <i class="fas fa-envelope fs-5"></i>
+                        </a>
+                    </div>
+                </div>
 
+                <!-- 2. The Book (Takes 6 columns on mobile, 2 on large screens) -->
+                <div class="col-6 col-md-3 col-lg-2">
+                    <h5 class="fw-bold text-white mb-3">The Book</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="#read-excerpt" class="footer-link text-white opacity-75">Read Excerpt</a></li>
+                        <li class="mb-2"><a href="#order" class="footer-link text-white opacity-75">Order Formats</a></li>
+                        <li class="mb-2"><a href="https://www.amazon.com/LOGOSPHERE-notes-humanity-new-paradigm-ebook/dp/B0CLL1SLJP" class="footer-link text-white opacity-75">Buy on Amazon</a></li>
+                        <li class="mb-2"><a href="#read-excerpt" class="footer-link text-white opacity-75">Audiobook Sample</a></li>
+                        <li class="mb-2"><a href="#testimonial" class="footer-link text-white opacity-75">Testimonials</a></li>
+                    </ul>
+                </div>
+
+                <!-- 3. The Author (Takes 6 columns on mobile, 2 on large screens) -->
+                <div class="col-6 col-md-3 col-lg-2">
+                    <h5 class="fw-bold text-white mb-3">Author</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="#author" class="footer-link text-white opacity-75">About Michael Okoro</a></li>
+                        <li class="mb-2"><a href="#contact-author" class="footer-link text-white opacity-75">Contact Author</a></li>
+                        <li class="mb-2"><a href="#faq" class="footer-link text-white opacity-75">F.A.Q.</a></li>
+                        <li class="mb-2"><a href="blog.html" class="footer-link text-white opacity-75">Blog & Insights</a></li>
+                        <li class="mb-2"><a href="#speaking" class="footer-link text-white opacity-75">Speaking Engagements</a></li>
+                    </ul>
+                </div>
+
+                <!-- 4. Contact Details (Takes 6 columns on mobile, 4 on large screens) -->
+                <div class="col-6 col-md-6 col-lg-4">
+                    <h5 class="fw-bold text-white mb-3">Institute Contact</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2 pt-2 text-white opacity-75">
+                            <i class="fas fa-envelope text-info me-2"></i>
+                            <a href="mailto:Logosphereinstitute@gmail.com" class="footer-link text-white opacity-75">
+                                Logosphereinstitute@gmail.com
+                            </a>
+                        </li>
+                        <li class="mb-2 text-white opacity-75">
+                            <i class="fas fa-phone-alt text-info me-2"></i>
+                            <a href="tel:+2349026615380" class="footer-link text-white opacity-75">
+                                +234 902 661 5380
+                            </a>
+                        </li>
+                        <li class="mb-2 text-white opacity-75">
+                            <i class="fas fa-map-marker-alt text-info me-2"></i>
+                            De Santos Estate, Lagos
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Copyright and Legal Links -->
+            <div class="row pt-3 mt-4 border-top border-light opacity-25">
+                <div class="col-12 text-center text-white small">
+                    <p class="mb-1 opacity-75">
+                        &copy; 2025 Logosphere Institute. All rights reserved.
+                    </p>
+                    <p class="mb-0">
+                        <a href="#" class="text-white mx-2 footer-link opacity-75">Terms of Use</a> | 
+                        <a href="#" class="text-white mx-2 footer-link opacity-75">Privacy Policy</a> |
+                        <a href="#" class="text-white mx-2 footer-link opacity-75">Cookie Settings</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<!-- FOOTER END -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -773,7 +920,5 @@ document.getElementById('prevBtn').addEventListener('click', prevTestimonial);
 setInterval(nextTestimonial, 6000);
 
 </script>
-
-
 </body>
 </html>

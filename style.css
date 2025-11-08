@@ -14,31 +14,22 @@
     --about-badge-background: rgba(255,255,255,0.7);
 }
 
-[data-theme="dark"] {
-    --bg-page: #0f172a;
-    --bg-secondary: #1e293b;
-    --text-main: #e2e8f0;
-    --text-muted: #94a3b8;
-    --color-primary: #4da6ff;
-    --hero-bg-top: #020617;
-    --hero-bg-bottom: #082f49;
-    --hero-circle-1: rgba(77, 166, 255, 0.15);
-    --hero-circle-2: rgba(0, 255, 255, 0.15);
-    --hero-circle-3: rgba(255, 255, 255, 0.05);
-    --shadow-color: rgba(0,0,0,0.5);
-    --about-badge-background: rgba(0,0,0,0.5);
-}
-
 /* ==============================
    BASE
 ============================== */
 html, body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     font-family: 'Inter', "Segoe UI", sans-serif;
     background: var(--bg-page);
     color: var(--text-main);
     overflow-x: hidden;
     transition: .4s ease;
 }
+main {
+            flex-grow: 1;
+        }
 
 h1, h2, h3, h4, h5, h6, strong { color: var(--text-main); }
 .text-muted, .text-secondary { color: var(--text-muted) !important; }
@@ -52,6 +43,27 @@ h1, h2, h3, h4, h5, h6, strong { color: var(--text-main); }
 .shadow-lg { box-shadow: 0 1rem 3rem var(--shadow-color) !important; }
 
 /* ==============================
+   NAVBAR STYLES (NEW)
+============================== */
+.navbar-blur {
+    /* Glass Effect */
+    background-color: rgba(10, 37, 64, 0.8) !important; 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease;
+    z-index: 1030; /* Ensures it sits above everything else */
+}
+.navbar-blur .nav-link:hover {
+    color: var(--color-primary) !important;
+}
+.navbar-blur .nav-link.active {
+    color: white !important;
+    border-bottom: 2px solid white;
+    padding-bottom: 6px;
+}
+
+/* ==============================
    HERO SECTION*/
         .hero-fire {
             min-height: 100vh;
@@ -59,7 +71,8 @@ h1, h2, h3, h4, h5, h6, strong { color: var(--text-main); }
             align-items: center;
             background: linear-gradient(120deg, var(--hero-bg-top), var(--hero-bg-bottom));
             color: #fff;
-            padding: 70px 0;
+            /* Added padding-top to compensate for sticky navbar height (approx 70px) */
+            padding: 100px 0 70px 0; 
             position: relative;
             overflow: hidden; /* Keep the overflow hidden */
         }
@@ -95,6 +108,7 @@ h1, h2, h3, h4, h5, h6, strong { color: var(--text-main); }
             background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--bg-page) 90%); 
             pointer-events: none;
             transition: background 0.5s ease;
+            z-index: 2;
         }
 
 .circle-anim {
@@ -157,9 +171,12 @@ h1, h2, h3, h4, h5, h6, strong { color: var(--text-main); }
   color: #fff !important;
   font-weight: 800 !important;
 }
+.filter-white {
+    filter: brightness(0) invert(1);
+}
 
 
- /* === HERO SECTION ALIGNMENT FIXES (Focus of this turn) === */
+ /* === HERO SECTION ALIGNMENT FIXES === */
 
         /* 1. Universal Left-Alignment for Text Column (Desktop & Mobile) */
         .hero-fire .col-lg-6.order-1 {
@@ -502,4 +519,118 @@ h1, h2, h3, h4, h5, h6, strong { color: var(--text-main); }
   #prevBtn, #nextBtn {
     margin: 0 6px !important;
   }
+}
+
+/* FULL-SECTION BACKGROUND */
+.contact-author-section {
+  background: linear-gradient(to bottom right, #f6faff, #e9f0f8);
+}
+
+
+/* =======================================
+   Custom Styles for Contact Icons
+   ======================================= */
+
+/* Matches the style of the feature card icons but uses the primary blue color */
+.contact-icon-circle {
+    width: 40px; 
+    height: 40px;
+    background-color: #007bff; /* Primary Bootstrap Blue */
+    border-radius: 50%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Prevents shrinking */
+    
+    /* Icon inside the circle */
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+
+/* =======================================
+   FOOTER STYLES (MATCHES HERO)
+   ======================================= */
+
+.footer-fire-wrapper {
+    /* Ensures the footer spans the entire viewport width */
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    position: relative;
+    overflow: hidden; /* Contains the animated circles */
+}
+
+.hero-footer-style {
+    /* Hero Gradient Background */
+    background: linear-gradient(120deg, var(--hero-bg-top), var(--hero-bg-bottom)) !important;
+    position: relative;
+    color: white !important;
+    padding-bottom: 30px !important; /* Adjust overall footer height */
+}
+
+/* Animated circles inside the footer wrapper */
+.footer-fire-wrapper .circle-anim:nth-child(1) { background-color: rgba(255, 255, 255, 0.15); top: 5%; left: 80%; }
+.footer-fire-wrapper .circle-anim:nth-child(2) { background-color: rgba(255, 255, 255, 0.15); bottom: 10%; right: 5%; animation-delay: 1.5s; }
+.footer-fire-wrapper .circle-anim:nth-child(3) { background-color: rgba(255, 255, 255, 0.1); top: 50%; left: 10%; animation-delay: 3s; }
+
+/* White Gradient Transition (The missing piece) */
+.hero-footer-style::before {
+    content: "";
+    position: absolute;
+    top: -100px; /* Starts the fade-in well above the section */
+    left: 0;
+    width: 100%;
+    height: 100px;
+    /* Transitions from the page background (white/light gray) to transparent */
+    background: linear-gradient(to top, rgba(248, 250, 255, 0) 0%, var(--bg-page) 100%); 
+    pointer-events: none;
+    z-index: 10;
+    /* Adjust this gradient stop for color match if needed */
+    background: linear-gradient(to bottom, transparent 0%, var(--bg-page) 100%);
+    
+    /* Reverse the transition for the footer to match the Hero's style */
+    background: linear-gradient(to top, rgba(0,0,0,0) 0%, var(--bg-page) 100%);
+    
+    /* Final adjustment for smooth blend */
+    background: linear-gradient(to top, 
+        rgba(248, 250, 255, 0) 0%, /* Transparent at the footer boundary */
+        rgba(248, 250, 255, 1) 100% /* Solid page background color at the top */
+    );
+    height: 120px;
+    top: -120px;
+}
+
+/* Custom link styling to match the modern look */
+.footer-link {
+    color: #d1d5db;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.footer-link:hover {
+    color: var(--color-primary); /* A nice Bootstrap-like blue accent */
+}
+
+/* Social icon hover effect */
+.social-icon {
+    color: #9ca3af;
+    transition: color 0.2s, transform 0.2s;
+}
+.social-icon:hover {
+    color: white !important; /* White hover on dark background */
+    transform: translateY(-2px);
+}
+.social-icon.text-white { /* For icons used in the footer/hero */
+    color: white !important;
+    opacity: 0.8;
+}
+.social-icon.text-white:hover {
+    opacity: 1;
+}
+
+@media (max-width: 991.98px) {
+    .footer-fire-wrapper {
+        margin: 0 !important;
+        width: 100% !important;
+    }
 }

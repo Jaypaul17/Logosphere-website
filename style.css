@@ -1240,3 +1240,25 @@ strong {
   background-color: #0056b3;
   color: #fff;
 }
+
+/* =======================================
+   SMOOTH TAB TRANSITIONS
+   ======================================= */
+.tab-content .tab-pane {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  /* Smooth ease-out */
+  transform: translateY(10px);
+  /* Subtle slide */
+}
+
+.tab-content .tab-pane.active {
+  display: block;
+  /* Takes up space immediately */
+}
+
+.tab-content .tab-pane.active.show {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -11,6 +11,19 @@ const config = {
     apiVersion: '2023-05-03', // use current date (YYYY-MM-DD) to target the latest API version
 }
 
+const client = createClient(config)
+const builder = imageUrlBuilder(client)
+
+function urlFor(source) {
+    return builder.image(source)
+}
+
+function formatDate(dateString) {
+    if (!dateString) return ''
+    const date = new Date(dateString)
+    return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+}
+
 // Make functions globally available
 window.allPosts = [];
 window.currentPostIndex = 0;

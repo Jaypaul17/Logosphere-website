@@ -83,59 +83,8 @@
         <!-- GALLERY SECTION -->
         <section class="py-5 bg-light">
             <div class="container">
-                <div class="row g-4">
-                    <!-- Gallery Item 1 -->
-                    <div class="col-md-4 mb-4" data-aos="fade-up">
-                        <div class="gallery-item rounded-4 shadow-sm overflow-hidden position-relative">
-                            <img src="Img/Book cover 2.jpg" alt="Book Cover"
-                                class="img-fluid w-100 h-100 object-fit-cover">
-                            <div class="gallery-overlay d-flex align-items-center justify-content-center">
-                                <p class="text-white fw-bold mb-0">The Book</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Gallery Item 2 -->
-                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-                        <div class="gallery-item rounded-4 shadow-sm overflow-hidden position-relative">
-                            <img src="Img/Reading.png" alt="Reading" class="img-fluid w-100 h-100 object-fit-cover">
-                            <div class="gallery-overlay d-flex align-items-center justify-content-center">
-                                <p class="text-white fw-bold mb-0">Reading</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Gallery Item 3 -->
-                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                        <div class="gallery-item rounded-4 shadow-sm overflow-hidden position-relative">
-                            <img src="Img/Author.jpg" alt="Author" class="img-fluid w-100 h-100 object-fit-cover">
-                            <div class="gallery-overlay d-flex align-items-center justify-content-center">
-                                <p class="text-white fw-bold mb-0">The Author</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Placeholder Item 4 (reusing existing image for demo) -->
-                    <div class="col-md-6 mb-4" data-aos="fade-up">
-                        <div class="gallery-item rounded-4 shadow-sm overflow-hidden position-relative">
-                            <img src="Img/Logosphere logo.png" alt="Logo"
-                                class="img-fluid w-100 h-100 object-fit-contain bg-dark p-4">
-                            <div class="gallery-overlay d-flex align-items-center justify-content-center">
-                                <p class="text-white fw-bold mb-0">Identity</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Placeholder Item 5 (reusing existing image for demo) -->
-                    <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-                        <div class="gallery-item rounded-4 shadow-sm overflow-hidden position-relative">
-                            <img src="Img/book-image.webp" alt="Book 3D" class="img-fluid w-100 h-100 object-fit-cover">
-                            <div class="gallery-overlay d-flex align-items-center justify-content-center">
-                                <p class="text-white fw-bold mb-0">Perspective</p>
-                            </div>
-                        </div>
-                    </div>
-
+                <div class="row g-4" id="gallery-container">
+                    <!-- Gallery items will be injected here by cms.js -->
                 </div>
             </div>
         </section>
@@ -269,6 +218,7 @@
         });
     </script>
     <script src="script.js"></script>
+    <script type="module" src="cms.js"></script>
 </body>
 
 </html>

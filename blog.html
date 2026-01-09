@@ -248,6 +248,31 @@
     </div>
     <!-- FOOTER END -->
 
+    <!-- BLOG POST MODAL -->
+    <div id="blog-modal" class="blog-modal-backdrop">
+        <div class="blog-modal-content-wrapper">
+            <!-- Previous Button -->
+            <button class="nav-btn prev-btn" onclick="navigatePost(-1)" aria-label="Previous Post">
+                <i class="bi bi-chevron-left"></i>
+            </button>
+
+            <!-- Modal Content Card -->
+            <div class="blog-modal-card">
+                <button class="close-modal-btn" onclick="closeModal()" aria-label="Close">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+                <div id="modal-body-content">
+                    <!-- Dynamic Content Injected Here -->
+                </div>
+            </div>
+
+            <!-- Next Button -->
+            <button class="nav-btn next-btn" onclick="navigatePost(1)" aria-label="Next Post">
+                <i class="bi bi-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
     <!-- Bootstrap JS, AOS, and Custom JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>

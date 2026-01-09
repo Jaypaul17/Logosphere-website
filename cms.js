@@ -54,6 +54,11 @@ async function fetchAndRenderBlog() {
 
     } catch (error) {
         console.error('Error fetching blog posts:', error)
+        // Helpful error for the user
+        if (error.message.includes('CorsOrigin')) {
+            console.error('CORS Error detected. Please add this origin to your Sanity Studio CORS settings.');
+            alert('CORS Error: This domain is not allowed to fetch data from Sanity. Check the console for more details.');
+        }
     }
 }
 
@@ -69,18 +74,15 @@ function createPostCard(post) {
     // Image for Kairos/Logos if available
     let imageHtml = ''
     if (post.mainImage) {
-        // If you want to show images in cards, add here. 
-        // Based on original design, Logos didn't show images in the card list, but Kairos might.
-        // For now, adhering to the structure viewed in blog.html which didn't strictly show images for text cards.
-        // But if Kairos is "Reflections on timely intervention", maybe it has images? 
-        // The previous Kairos placeholder was just text. 
-        // I will currently not add mainImage to the card unless requested or seen in design.
+        const imageUrl = urlFor(post.mainImage).width(600).height(350).url()
+        imageHtml = `<img src="${imageUrl}" class="card-img-top object-fit-cover" alt="${title}" style="height: 250px;">`
     }
 
     return `
     <div class="col-md-6 col-lg-4" data-aos="fade-up">
-        <div class="card shadow-sm rounded-4 h-100">
-            <div class="card-body">
+        <div class="card shadow-sm rounded-4 h-100 border-0 overflow-hidden">
+            ${imageHtml}
+            <div class="card-body d-flex flex-column">
                 <p class="blog-card-meta mb-1">${date} • ${category}</p>
                 <h5 class="fw-bold mb-3">${title}</h5>
                 <p class="card-text small text-muted">${excerpt}</p>

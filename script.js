@@ -78,4 +78,42 @@ document.addEventListener('DOMContentLoaded', function () {
     if (popupHasBeenShown) {
         showNavTimer();
     }
+
+    /* ==============================
+       DARK MODE TOGGLE LOGIC
+    ============================== */
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const htmlElement = document.documentElement;
+
+    // Check localStorage or system preference
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        htmlElement.setAttribute('data-theme', 'dark');
+        updateIcon(true);
+    }
+
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateIcon(newTheme === 'dark');
+        });
+    }
+
+    function updateIcon(isDark) {
+        if (!themeToggleBtn) return;
+        // Use FontAwesome icons if available, or simple text/emoji
+        // Assuming FontAwesome is loaded based on index.html
+        if (isDark) {
+            themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+        } else {
+            themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+        }
+    }
 });
+

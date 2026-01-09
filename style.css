@@ -17,7 +17,7 @@
 
 /* ==============================
    BASE
-============================== */
+================================ */
 html,
 body {
   min-height: 100vh;
@@ -68,7 +68,7 @@ strong {
 
 /* ==============================
    NAVBAR STYLES (NEW - Transparent & Frosted)
-============================== */
+================================ */
 .navbar-blur {
   /* 1. Transparent Background, relies on blur for visibility */
   background-color: rgba(10, 37, 64, 0.1) !important;
@@ -149,18 +149,17 @@ strong {
   display: inline-block;
 }
 
-/* Hero bottom fade */
+/* Hero bottom - Gradient Fade */
 .hero-fire::after {
   content: "";
   position: absolute;
-  bottom: -1px;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 120px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, var(--bg-page) 90%);
-  pointer-events: none;
-  transition: background 0.5s ease;
+  height: 150px;
+  background: linear-gradient(to bottom, transparent, #f0f6ff);
   z-index: 2;
+  pointer-events: none;
 }
 
 .circle-anim {
@@ -348,7 +347,7 @@ strong {
 
 /* ==============================
    ABOUT SECTION
-============================== */
+================================ */
 #about {
   position: relative;
 }
@@ -428,7 +427,7 @@ strong {
 
 /* ==============================
    MOBILE RULES
-============================== */
+================================ */
 @media(max-width: 768px) {
 
   /* Stack centered */
@@ -470,7 +469,7 @@ strong {
 
 /* ==============================
    THEME BUTTON
-============================== */
+================================ */
 .theme-btn {
   position: fixed;
   right: 18px;
@@ -877,277 +876,6 @@ strong {
 /* New style for the content area's 'Read More' link/button */
 .blog-card-read-more {
   cursor: pointer;
-  pointer-events: auto;
-  transform: translateX(-50%) translateY(0px);
-}
-
-
-/* Icon */
-.quote-icon {
-  font-size: 2.5rem;
-  color: #0d6efd;
-  margin-bottom: 1rem;
-}
-
-@media (max-width: 576px) {
-  .testimonial-card {
-    padding: 2rem 1.7rem;
-    max-width: 100%;
-    border-radius: 18px;
-  }
-
-  .quote-icon {
-    font-size: 2rem;
-  }
-
-  .testimonial-card p.lead {
-    font-size: 1rem;
-  }
-}
-
-/* Better mobile button layout */
-@media (max-width: 576px) {
-  .testimonial-area .btn {
-    padding: 0.45rem 0.9rem;
-    font-size: 0.9rem;
-  }
-
-  #prevBtn,
-  #nextBtn {
-    margin: 0 6px !important;
-  }
-}
-
-/* FULL-SECTION BACKGROUND */
-.contact-author-section {
-  background: linear-gradient(to bottom right, #f6faff, #e9f0f8);
-}
-
-
-/* =======================================
-   Custom Styles for Contact Icons
-   ======================================= */
-
-/* Matches the style of the feature card icons but uses the primary blue color */
-.contact-icon-circle {
-  width: 40px;
-  height: 40px;
-  background-color: #007bff;
-  /* Primary Bootstrap Blue */
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  /* Prevents shrinking */
-
-  /* Icon inside the circle */
-  font-size: 1.1rem;
-  color: #ffffff;
-}
-
-
-/* =======================================
-   FOOTER STYLES (MATCHES HERO)
-   ======================================= */
-
-.footer-fire-wrapper {
-  /* Ensures the footer spans the entire viewport width */
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  position: relative;
-  overflow: hidden;
-  /* Contains the animated circles */
-}
-
-.hero-footer-style {
-  /* Hero Gradient Background */
-  background: linear-gradient(120deg, var(--hero-bg-top), var(--hero-bg-bottom)) !important;
-  position: relative;
-  color: white !important;
-  padding-bottom: 30px !important;
-  /* Adjust overall footer height */
-}
-
-/* Animated circles inside the footer wrapper */
-.footer-fire-wrapper .circle-anim:nth-child(1) {
-  background-color: rgba(255, 255, 255, 0.15);
-  top: 5%;
-  left: 80%;
-}
-
-.footer-fire-wrapper .circle-anim:nth-child(2) {
-  background-color: rgba(255, 255, 255, 0.15);
-  bottom: 10%;
-  right: 5%;
-  animation-delay: 1.5s;
-}
-
-.footer-fire-wrapper .circle-anim:nth-child(3) {
-  background-color: rgba(255, 255, 255, 0.1);
-  top: 50%;
-  left: 10%;
-  animation-delay: 3s;
-}
-
-/* White Gradient Transition (The missing piece) */
-.hero-footer-style::before {
-  content: "";
-  position: absolute;
-  top: -120px;
-  left: 0;
-  width: 100%;
-  height: 120px;
-  /* Final adjustment for smooth blend */
-  background: linear-gradient(to top,
-      rgba(248, 250, 255, 0) 0%,
-      /* Transparent at the footer boundary */
-      rgba(248, 250, 255, 1) 100%
-      /* Solid page background color at the top */
-    );
-  pointer-events: none;
-  z-index: 10;
-}
-
-/* Custom link styling to match the modern look */
-.footer-link {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-/* =======================================
-   GALLERY STYLES
-   ======================================= */
-.gallery-item {
-  height: 300px;
-  /* Fixed height for consistency */
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-}
-
-.gallery-item img {
-  transition: transform 0.5s ease;
-}
-
-.gallery-item:hover img {
-  transform: scale(1.1);
-}
-
-.gallery-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.gallery-item:hover .gallery-overlay {
-  opacity: 1;
-}
-
-.footer-link:hover {
-  color: var(--color-primary);
-  /* A nice Bootstrap-like blue accent */
-}
-
-/* Social icon hover effect */
-.social-icon {
-  color: #9ca3af;
-  transition: color 0.2s, transform 0.2s;
-}
-
-.social-icon:hover {
-  color: white !important;
-  /* White hover on dark background */
-  transform: translateY(-2px);
-}
-
-.social-icon.text-white {
-  /* For icons used in the footer/hero */
-  color: white !important;
-  opacity: 0.8;
-}
-
-.social-icon.text-white:hover {
-  opacity: 1;
-}
-
-@media (max-width: 991.98px) {
-  .footer-fire-wrapper {
-    margin: 0 !important;
-    width: 100% !important;
-  }
-}
-
-/* Blog Post Card Styles (Mockup for IG posts) */
-.blog-card-img {
-  height: 300px;
-  object-fit: cover;
-  border-radius: 12px 12px 0 0;
-}
-
-.blog-card-meta {
-  font-size: 0.8rem;
-  color: var(--color-primary);
-}
-
-.blog-card-link {
-  text-decoration: none;
-  color: var(--text-main);
-  transition: color 0.2s;
-}
-
-.blog-card-link:hover {
-  color: var(--color-primary);
-}
-
-.instagram-embed-target {
-  min-height: 600px;
-}
-
-.navbar-blur-light {
-  /* Slightly less transparent background for visibility on light pages */
-  background-color: rgba(255, 255, 255, 0.4) !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  /* Subtle white border */
-}
-
-/* Optimizing Blog Pills for Mobile (They are currently in a vertical column on mobile) */
-@media (max-width: 767.98px) {
-
-  /* Force the pills into a horizontal, scrollable row for small screens */
-  #blogTabs {
-    flex-direction: row !important;
-    /* Override the flex-column from Bootstrap */
-    flex-wrap: nowrap !important;
-    overflow-x: auto;
-    /* Allow horizontal scrolling */
-    -webkit-overflow-scrolling: touch;
-    /* Better scrolling on iOS */
-    padding-bottom: 8px !important;
-    /* Space for a scrollbar/shadow if needed */
-    justify-content: flex-start !important;
-    /* Align tabs to the start */
-  }
-
-  #blogTabs .nav-item {
-    flex-shrink: 0;
-    /* Prevent pills from shrinking */
-  }
-}
-
-/* New style for the content area's 'Read More' link/button */
-.blog-card-read-more {
-  cursor: pointer;
   text-decoration: none;
   color: var(--color-primary);
   font-weight: 600;
@@ -1160,7 +888,7 @@ strong {
 
 /* ==============================
    EVENT POPUP
-============================== */
+================================ */
 .event-popup {
   position: fixed;
   top: 0;
@@ -1261,4 +989,38 @@ strong {
 .tab-content .tab-pane.active.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* =======================================
+   GALLERY STYLES
+   ======================================= */
+.gallery-item {
+  height: 300px;
+  /* Fixed height for consistency */
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
 }

@@ -27,6 +27,8 @@ function formatDate(dateString) {
 // Make functions globally available
 window.allPosts = [];
 window.currentPostIndex = 0;
+window.currentCategoryPosts = [];
+window.categoryIndex = 0;
 
 async function fetchAndRenderBlog() {
     const logosContainer = document.getElementById('logos-list')
@@ -83,6 +85,8 @@ function createPostCard(post, index) {
     const title = post.title || 'Untitled'
     // Limit excerpt to length if needed, but schema has text field
     const excerpt = post.excerpt || ''
+    const bodyHtml = post.body ? toHTML(post.body) : ''
+    const collapseId = `collapse-${post._id || index}`
 
     // Image for Kairos/Logos if available
     let imageHtml = ''
@@ -91,7 +95,6 @@ function createPostCard(post, index) {
         imageHtml = `<img src="${imageUrl}" class="card-img-top object-fit-cover" alt="${title}" style="height: 250px;">`
     }
 
-    // UPDATED: Button calls openBlogModal instead of collapse
     return `
     <div class="col-md-6 col-lg-4" data-aos="fade-up">
         <div class="card shadow-sm rounded-4 h-100 border-0 overflow-hidden">
@@ -101,9 +104,23 @@ function createPostCard(post, index) {
                 <h5 class="fw-bold mb-3">${title}</h5>
                 <p class="card-text small text-muted">${excerpt}</p>
                 
-                <button class="blog-card-read-more mt-auto pt-2 bg-transparent border-0 text-start ps-0" 
+                <!-- MOBILE: Drag down expansion (Accordion style) -->
+                <div class="collapse d-md-none" id="${collapseId}">
+                    <div class="mt-3 article-content border-top pt-3">
+                        ${bodyHtml}
+                    </div>
+                </div>
+
+                <!-- DESKTOP: Modal Trigger (Hidden on Mobile) -->
+                <button class="blog-card-read-more d-none d-md-block mt-auto pt-2 bg-transparent border-0 text-start ps-0" 
                     onclick="openBlogModal(${index})">
                     Read More <i class="bi bi-arrow-right-circle-fill ms-1"></i>
+                </button>
+
+                <!-- MOBILE: Collapse Trigger (Hidden on Desktop) -->
+                <button class="blog-card-read-more d-md-none mt-auto pt-2 bg-transparent border-0 text-start ps-0" 
+                    data-bs-toggle="collapse" href="#${collapseId}" role="button" aria-expanded="false">
+                    Read More <i class="bi bi-arrow-down-circle-fill ms-1"></i>
                 </button>
             </div>
         </div>
@@ -112,33 +129,45 @@ function createPostCard(post, index) {
 }
 
 // === BLOG MODAL LOGIC ===
-// === BLOG MODAL LOGIC ===
 window.openBlogModal = function (index) {
     if (index < 0 || index >= window.allPosts.length) return;
-    window.currentPostIndex = index;
+
+    const clickedPost = window.allPosts[index];
+    const category = clickedPost.category || 'Logos';
+
+    // Filter allPosts to only those in the same category
+    window.currentCategoryPosts = window.allPosts.filter(p => (p.category || 'Logos') === category);
+
+    // Find the index within this filtered list
+    window.categoryIndex = window.currentCategoryPosts.findIndex(p => p._id === clickedPost._id);
+
     renderModalContent();
 
     const modal = document.getElementById('blog-modal');
-    modal.classList.add('show');
-    document.body.style.overflow = 'hidden'; // Disable scroll
+    if (modal) {
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden'; // Disable scroll
+    }
 }
 
 window.closeModal = function () {
     const modal = document.getElementById('blog-modal');
-    modal.classList.remove('show');
-    document.body.style.overflow = ''; // Enable scroll
+    if (modal) {
+        modal.classList.remove('show');
+        document.body.style.overflow = ''; // Enable scroll
+    }
 }
 
 window.navigatePost = function (direction) {
-    const newIndex = window.currentPostIndex + direction;
-    if (newIndex >= 0 && newIndex < window.allPosts.length) {
-        window.currentPostIndex = newIndex;
+    const newIndex = window.categoryIndex + direction;
+    if (newIndex >= 0 && newIndex < window.currentCategoryPosts.length) {
+        window.categoryIndex = newIndex;
         renderModalContent();
     }
 }
 
 function renderModalContent() {
-    const post = window.allPosts[window.currentPostIndex];
+    const post = window.currentCategoryPosts[window.categoryIndex];
     if (!post) return;
 
     const date = formatDate(post.publishedAt);
@@ -166,17 +195,26 @@ function renderModalContent() {
         </div>
     `;
 
-    document.getElementById('modal-body-content').innerHTML = contentHtml;
+    const contentContainer = document.getElementById('modal-body-content');
+    if (contentContainer) {
+        contentContainer.innerHTML = contentHtml;
+        // Scroll to top of modal content when navigating
+        contentContainer.closest('.blog-modal-card').scrollTop = 0;
+    }
 
     // Update Nav Buttons State
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
 
-    if (window.currentPostIndex === 0) prevBtn.classList.add('disabled');
-    else prevBtn.classList.remove('disabled');
+    if (prevBtn) {
+        if (window.categoryIndex === 0) prevBtn.classList.add('disabled');
+        else prevBtn.classList.remove('disabled');
+    }
 
-    if (window.currentPostIndex === window.allPosts.length - 1) nextBtn.classList.add('disabled');
-    else nextBtn.classList.remove('disabled');
+    if (nextBtn) {
+        if (window.categoryIndex === window.currentCategoryPosts.length - 1) nextBtn.classList.add('disabled');
+        else nextBtn.classList.remove('disabled');
+    }
 }
 
 

@@ -1024,160 +1024,204 @@ strong {
 .gallery-item:hover .gallery-overlay {
   opacity: 1;
 }
+
 /* =======================================
    BLOG MODAL STYLES
    ======================================= */
 .blog-modal-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(12px);
-    z-index: 1050;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  z-index: 1050;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .blog-modal-backdrop.show {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
 
 .blog-modal-content-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 900px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
 }
 
 /* Modal Card */
 .blog-modal-card {
-    background: #fff;
-    width: 100%;
-    max-width: 750px;
-    height: 85vh; /* Fixed height relative to viewport */
-    border-radius: 20px;
-    padding: 0; /* Removing padding from container to let image hit edges */
-    position: relative;
-    overflow-y: auto;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-    transform: scale(0.95);
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: #fff;
+  width: 100%;
+  max-width: 750px;
+  height: 85vh;
+  /* Fixed height relative to viewport */
+  border-radius: 20px;
+  padding: 0;
+  /* Removing padding from container to let image hit edges */
+  position: relative;
+  overflow-y: auto;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  transform: scale(0.95);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .blog-modal-backdrop.show .blog-modal-card {
-    transform: scale(1);
+  transform: scale(1);
 }
 
 /* Navigation Buttons */
 .nav-btn {
-    background: rgba(255, 255, 255, 0.2);
-    border: none;
-    color: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(5px);
 }
 
 .nav-btn:hover {
-    background: rgba(255, 255, 255, 0.4);
-    transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
 }
 
 /* Hide Nav buttons if disabled (first/last post) - Logic in JS can add 'disabled' class */
 .nav-btn.disabled {
-    opacity: 0.3;
-    pointer-events: none;
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 /* Close Button */
 .close-modal-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    cursor: pointer;
-    z-index: 10;
-    transition: background 0.2s;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s;
 }
 
 .close-modal-btn:hover {
-    background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.8);
 }
 
 /* Modal Content Styling */
 .modal-article-img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
 }
 
 .modal-article-body {
-    padding: 40px;
+  padding: 40px;
 }
 
 @media (max-width: 768px) {
-    .blog-modal-content-wrapper {
-        padding: 10px;
-        flex-direction: column;
-        justify-content: center;
-    }
+  .blog-modal-content-wrapper {
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-    .blog-modal-card {
-        height: 75vh;
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
+  .blog-modal-card {
+    height: 75vh;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
 
-    /* Move nav buttons to bottom or sides of card? 
+  /* Move nav buttons to bottom or sides of card? 
        Let's put them absolute on the screen sides or below card.
        Below card is safer for mobile vertical flow.
     */
-    .nav-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 20;
-    }
-    
-    .prev-btn {
-        left: 10px;
-    }
-    
-    .next-btn {
-        right: 10px;
-    }
+  .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+  }
 
-    .modal-article-body {
-        padding: 25px;
-    }
+  .prev-btn {
+    left: 10px;
+  }
 
-    .modal-article-img {
-        height: 200px;
-    }
+  .next-btn {
+    right: 10px;
+  }
+
+  .modal-article-body {
+    padding: 25px;
+  }
+
+  .modal-article-img {
+    height: 200px;
+  }
+}
+
+/* Mobile Blog Collapse Styling */
+.article-content {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-dark);
+}
+
+.article-content p {
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 767.98px) {
+
+  /* Ensure the modal doesn't show up at all on mobile */
+  #blog-modal {
+    display: none !important;
+  }
+}
+
+/* Coming Soon Badge for Order Section */
+.coming-soon-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #1a73e8;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  z-index: 5;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+  pointer-events: none;
 }

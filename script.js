@@ -7,10 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Check if popup was already shown in this session
     let popupHasBeenShown = sessionStorage.getItem('popupShown') === 'true';
 
-    // Set Event Date: For demonstration, we'll set it to 5 days from now.
-    // In a real scenario, you would set a specific date string, e.g., new Date('2025-12-31T00:00:00')
-    const eventDate = new Date();
-    eventDate.setDate(eventDate.getDate() + 5);
+    // Set Event Date: January 17th, 2026
+    const eventDate = new Date('2026-01-17T00:00:00');
 
     function updateTimer() {
         const now = new Date();
@@ -18,6 +16,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (diff <= 0) {
             if (countdownDisplay) countdownDisplay.textContent = "00d 00h 00m";
+            // Hide event elements if expired
+            if (navTimer) navTimer.style.display = 'none';
+            if (popup) popup.classList.remove('show');
             return;
         }
 
@@ -35,7 +36,8 @@ document.addEventListener('DOMContentLoaded', function () {
     setInterval(updateTimer, 60000); // Update every minute
 
     function showNavTimer() {
-        if (navTimer) {
+        const now = new Date();
+        if (navTimer && (eventDate - now > 0)) {
             navTimer.style.display = 'block';
             // Add a subtle animation when it appears
             navTimer.classList.add('animate__animated', 'animate__fadeInDown');
@@ -45,15 +47,16 @@ document.addEventListener('DOMContentLoaded', function () {
     function closePopup() {
         if (popup) {
             popup.classList.remove('show');
-            // Show timer when popup is closed
+            // Show timer when popup is closed (if not expired)
             showNavTimer();
         }
     }
 
     // Scroll Logic to show popup
     window.addEventListener('scroll', function () {
-        // Show popup if not shown before and scrolled past 30%
-        if (!popupHasBeenShown && window.scrollY > (document.body.scrollHeight * 0.3)) {
+        const now = new Date();
+        // Only show popup if not expired
+        if (eventDate - now > 0 && !popupHasBeenShown && window.scrollY > (document.body.scrollHeight * 0.3)) {
             if (popup) {
                 popup.classList.add('show');
                 sessionStorage.setItem('popupShown', 'true');

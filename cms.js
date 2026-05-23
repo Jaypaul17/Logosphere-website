@@ -34,9 +34,10 @@ async function fetchAndRenderBlog() {
     const logosContainer = document.getElementById('logos-list')
     const kairosContainer = document.getElementById('kairos-list')
     const lettersContainer = document.getElementById('letters-list')
+    const lentenContainer = document.getElementById('lenten-list')
 
     // Only proceed if at least one container exists
-    if (!logosContainer && !kairosContainer && !lettersContainer) return
+    if (!logosContainer && !kairosContainer && !lettersContainer && !lentenContainer) return
 
     const query = `*[_type == "post"] | order(publishedAt desc)`
 
@@ -48,6 +49,7 @@ async function fetchAndRenderBlog() {
         if (logosContainer) logosContainer.innerHTML = ''
         if (kairosContainer) kairosContainer.innerHTML = ''
         if (lettersContainer) lettersContainer.innerHTML = ''
+        if (lentenContainer) lentenContainer.innerHTML = ''
 
         posts.forEach((post, index) => {
             const category = post.category || 'Logos' // Default to Logos

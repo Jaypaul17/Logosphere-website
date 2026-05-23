@@ -822,6 +822,10 @@
             {
               "type": "string",
               "value": "Letters"
+            },
+            {
+              "type": "string",
+              "value": "Lenten"
             }
           ]
         },

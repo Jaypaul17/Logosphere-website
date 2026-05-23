@@ -28,6 +28,7 @@ export default defineType({
           { title: 'Logos', value: 'Logos' },
           { title: 'Kairos', value: 'Kairos' },
           { title: 'Letters', value: 'Letters' },
+          { title: 'Lenten', value: 'Lenten' },
         ],
         layout: 'radio',
       },

@@ -1,4 +1,4 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/auuwqqsi/public_html/
+    - - export DEPLOYPATH=/home/cpanel_auuwqqsi/public_html/
     - /bin/cp -r * $DEPLOYPATH

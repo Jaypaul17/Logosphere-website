@@ -1225,3 +1225,158 @@ strong {
   opacity: 0.7;
   pointer-events: none;
 }
+
+/* =======================================
+   FEATURED INTERVIEW SECTION (SUCCESSDIGEST)
+   ======================================= */
+.featured-interview-section {
+  background: linear-gradient(135deg, #061524 0%, #0d2842 100%);
+  color: #ffffff;
+  padding: 5.5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background circles for the interview section */
+.featured-interview-section::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(59, 130, 246, 0.1);
+  filter: blur(50px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.featured-interview-section::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: rgba(59, 130, 246, 0.08);
+  filter: blur(40px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.featured-interview-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.featured-interview-section .section-title {
+  color: #ffffff !important;
+  font-weight: 800;
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+}
+
+.featured-interview-section p, 
+.featured-interview-section li {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.05rem;
+}
+
+.interview-quote {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.8;
+  font-style: italic;
+  border-left: 4px solid #3b82f6;
+  padding-left: 1.5rem;
+  margin: 1.8rem 0;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+}
+
+/* Floating Magazine Card */
+.magazine-card-wrapper {
+  position: relative;
+  display: inline-block;
+  perspective: 1000px;
+}
+
+.magazine-card {
+  transform: rotateY(-8deg) rotateX(4deg);
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.6s ease;
+  box-shadow: -15px 20px 40px rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  max-width: 380px;
+  width: 100%;
+}
+
+.magazine-card:hover {
+  transform: rotateY(0deg) rotateX(0deg) scale(1.03);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Takeaway list styling */
+.takeaway-list {
+  padding-left: 0;
+}
+
+.takeaway-list li {
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.takeaway-list li i {
+  color: #3b82f6;
+  font-size: 1.25rem;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* Custom buttons */
+.btn-selar {
+  background-color: #5a0b4d;
+  color: #ffffff !important;
+  border: 1px solid #5a0b4d;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.btn-selar:hover {
+  background-color: #791267;
+  border-color: #791267;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(90, 11, 77, 0.4);
+}
+
+.btn-outline-selar {
+  background-color: transparent;
+  color: #5a0b4d !important;
+  border: 2px solid #5a0b4d;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-selar:hover {
+  background-color: #5a0b4d;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(90, 11, 77, 0.25);
+}
+
+.btn-outline-selar-light {
+  background-color: transparent;
+  color: #ffffff !important;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-selar-light:hover {
+  background-color: #ffffff;
+  color: #07192b !important;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.25);
+}

@@ -1237,6 +1237,23 @@ strong {
   overflow: hidden;
 }
 
+/* Fix text contrast/readability inside dark section */
+.featured-interview-section h1,
+.featured-interview-section h2,
+.featured-interview-section h3,
+.featured-interview-section h4,
+.featured-interview-section h5,
+.featured-interview-section h6,
+.featured-interview-section strong,
+.featured-interview-section .section-title {
+  color: #ffffff !important;
+}
+
+.featured-interview-section .text-secondary,
+.featured-interview-section .text-muted {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
 /* Subtle background circles for the interview section */
 .featured-interview-section::before {
   content: "";

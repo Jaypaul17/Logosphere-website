@@ -118,5 +118,20 @@ document.addEventListener('DOMContentLoaded', function () {
             themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
         }
     }
+
+    // Auto-close mobile navbar when clicking an anchor link
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    const navbarCollapse = document.getElementById('navbarNav');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+            const href = this.getAttribute('href');
+            if (href && href.startsWith('#') && navbarCollapse && navbarCollapse.classList.contains('show')) {
+                const toggler = document.querySelector('.navbar-toggler');
+                if (toggler) {
+                    toggler.click();
+                }
+            }
+        });
+    });
 });
 
